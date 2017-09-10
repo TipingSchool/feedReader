@@ -30,7 +30,7 @@ class App extends Component {
           <nav>
             <span className='nav-span'>Feeds</span>
             <span className='nav-span'>Login</span>
-            <input type='text' value='search' />
+            <input type='text' placeholder ='search'/>
           </nav>
         </div>
         <div className='flex-container'>

@@ -40,10 +40,13 @@ p{
   padding: 15px;
   color: white;
   text-align: right;
+  position: fixed;
+  top : 0;
+  width : 100%;
 }
 
 .nav-span{
-  margin-inline-end: 20px
+  margin-inline-end: 20px;
 }
 
 
