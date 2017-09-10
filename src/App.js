@@ -28,15 +28,15 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <nav>
-          <span className='nav-span'>Feeds</span>
-          <span className='nav-span'>Login</span>
-          <input type='text' value='search' />
+            <span className='nav-span'>Feeds</span>
+            <span className='nav-span'>Login</span>
+            <input type='text' value='search' />
           </nav>
         </div>
         <div className='flex-container'>
          {this.state.CardValue.map((value) => <CatCard {...value}/>)}
 
-          </div>
+        </div>
       </div>
     );
   }
