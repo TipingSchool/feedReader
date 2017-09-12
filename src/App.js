@@ -3,15 +3,25 @@ import mongo from './mongo.jpg';
 import './App.css';
 
 
-const CatCard = (props) =>{
-  return(
+class CatCard extends Component{
+  constructor(props){
+    super(props);
+  
+  }
+  ClickHandler = () =>{
+    alert('you clicked' + this.props.name);
+  }
+
+  render(){
+    return(
     <div>
-      <div className='card-box'>
-            <img src={props.imgsrc} className='card-img'/>
-            <p> {props.name} </p>
+      <div className='card-box' onClick = {this.ClickHandler}>
+            <img src={this.props.imgsrc} className='card-img' alt={this.props.name}/>
+            <p> {this.props.name} </p>
             </div>
       </div>
-  )
+    );
+  }
 }
 
 class App extends Component {
@@ -21,9 +31,11 @@ class App extends Component {
             CardValue :[{'imgsrc':mongo, 'name':'MongoDB'},{'imgsrc':mongo, 'name':'NodeJS'},{'imgsrc':mongo, 'name':'NodeJS'},
             {'imgsrc':mongo, 'name':'NodeJS'},{'imgsrc':mongo, 'name':'NodeJS'},{'imgsrc':mongo, 'name':'NodeJS'}]
           }
+       
         }
 
   render() {
+    var self = this;
     return (
       <div className="App">
         <div className="App-header">
@@ -34,8 +46,7 @@ class App extends Component {
           </nav>
         </div>
         <div className='flex-container' >
-         {this.state.CardValue.map((value,i) => <CatCard key={i} {...value}/>)}
-
+         {this.state.CardValue.map((value,i) =>(  <CatCard key={i} {...value}  />))}
         </div>
       </div>
     );
