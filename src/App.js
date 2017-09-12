@@ -19,7 +19,7 @@ class App extends Component {
           super(props);
           this.state ={
             CardValue :[{'imgsrc':mongo, 'name':'MongoDB'},{'imgsrc':mongo, 'name':'NodeJS'},{'imgsrc':mongo, 'name':'NodeJS'},
-            {'imgsrc':mongo, 'name':'NodeJS'},{'imgsrc':mongo, 'name':'NodeJS'}]
+            {'imgsrc':mongo, 'name':'NodeJS'},{'imgsrc':mongo, 'name':'NodeJS'},{'imgsrc':mongo, 'name':'NodeJS'}]
           }
         }
 
@@ -33,8 +33,8 @@ class App extends Component {
             <input type='text' placeholder ='search'/>
           </nav>
         </div>
-        <div className='flex-container'>
-         {this.state.CardValue.map((value) => <CatCard {...value}/>)}
+        <div className='flex-container' >
+         {this.state.CardValue.map((value,i) => <CatCard key={i} {...value}/>)}
 
         </div>
       </div>

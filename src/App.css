@@ -5,7 +5,7 @@
 
 
 .flex-container{
-  display: inline-flex;
+  display:inline-flex;
   margin: 30px 100px;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -39,14 +39,13 @@ p{
   height: 20px;
   padding: 15px;
   color: white;
-  text-align: right;
+  text-align: center;
   position: fixed;
-  top : 0;
   width : 100%;
 }
 
 .nav-span{
-  margin-inline-end: 20px;
+  margin-inline-end: 30px;
 }
 
 
