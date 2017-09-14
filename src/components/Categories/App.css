@@ -37,18 +37,3 @@ p{
   height: 20px;
 }
 
-.App-header {
-  background-color: #A3A3A3;
-  height: 20px;
-  padding: 15px;
-  color: white;
-  text-align: center;
-  position: fixed;
-  width : 100%;
-}
-
-.nav-span{
-  margin-inline-end: 30px;
-}
-
-

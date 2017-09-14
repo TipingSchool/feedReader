@@ -22,13 +22,6 @@ class App extends Component {
    
     return (
       <div className="App">
-        <div className="App-header">
-          <nav>
-            <span className='nav-span'>Feeds</span>
-            <span className='nav-span'>Login</span>
-            <input type='text' placeholder ='search'/>
-          </nav>
-        </div>
         <div className="stat">
           </div>
         <div className='flex-container' >
