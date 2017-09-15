@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import html from '../categories/html.jpg'
+import html from '../Categories/html.jpg'
 
 class App extends Component{
   constructor(props){
