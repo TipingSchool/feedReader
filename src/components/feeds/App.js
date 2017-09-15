@@ -38,9 +38,7 @@ class App extends Component{
 
 }
 
-const FeedCard = (props) => {
-
-   return(
+const FeedCard = (props) => (
        <div>
            <div className='feed-card-box'>
              <div className='img-card col-md-3'>
@@ -57,7 +55,7 @@ const FeedCard = (props) => {
            </div>
        </div>
    )
-}
+
 
 
 export default App;

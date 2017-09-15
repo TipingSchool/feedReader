@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom'
 import './App.css';
 
 
@@ -11,14 +12,14 @@ class App extends Component{
     render(){
 
         return(
-            <div className="App-header">
+            <header className="App-header">
             <nav>
-              <span className='nav-span'>Home</span>
-              <span className='nav-span'>Feeds</span>
+              <span className='nav-span'><Link to='/'>Home</Link></span>
+              <span className='nav-span'><Link to='/feeds'>Feeds</Link></span>
               <span className='nav-span'>Login</span>
               <input type='text' placeholder ='search'/>
             </nav>
-          </div>
+          </header>
         )
     }
 
