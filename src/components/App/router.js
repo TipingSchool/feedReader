@@ -4,14 +4,14 @@ import Categories from '../categories/App';
 import Feeds from '../feeds/App';
 
 const App = () =>(
-    <main>
+    <div>
         <Switch>
         <Route path='/feeds' component={Feeds}/>
         <Route path='/' component={Categories}/>
             
         </Switch>
        
-    </main>
+    </div>
 )
 
 export default App;
