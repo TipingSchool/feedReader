@@ -46,9 +46,9 @@ class CatCard extends Component{
   render(){
     return(
     <div>
-      <div className='card-box' onClick = {this.ClickHandler}>
+      <div className='cat-card-box' onClick = {this.ClickHandler}>
         <div>
-            <img src={this.props.imgsrc} className='card-img' alt={this.props.name}/>
+            <img src={this.props.imgsrc} className='cat-card-img' alt={this.props.name}/>
             <p> {this.props.name} </p>
             </div>
         </div>

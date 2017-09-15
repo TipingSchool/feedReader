@@ -1,18 +1,13 @@
-.App {
-  text-align: center;
-}
-
-
-
 .flex-container{
   display:inline-flex;
   margin: 30px 100px;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-.card-box{
+.cat-card-box{
   /* width: 20%; */
   /* border: 1px solid black; */
+  text-align: center;
   height: 270px;
   margin: 20px;
   box-sizing: border-box;
@@ -26,7 +21,7 @@ p{
   margin: 0;
 }
 
-.card-img{
+.cat-card-img{
   width:100%;
   /* margin: 10px; */
   height: 200px;

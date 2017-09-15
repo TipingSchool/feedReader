@@ -42,9 +42,9 @@ const FeedCard = (props) => {
 
    return(
        <div>
-           <div className='card-box'>
+           <div className='feed-card-box'>
              <div className='img-card col-md-3'>
-                <img className='card-img' src={html} alt='try'/>
+                <img className='feed-card-img' src={html} alt='try'/>
               </div>
               <div className='discription-box col-md-9'>
                <heading> {props.heading}</heading>

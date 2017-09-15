@@ -18,7 +18,7 @@ p{
     direction: column;
 }
 
-.card-box{
+.feed-card-box{
     width:700px;
     /* border: 1px solid black; */
     height: 100px;
@@ -35,7 +35,7 @@ p{
     width:100px;
     float: left;
 }
-.card-img{
+.feed-card-img{
     width:100%;
     /* margin: 10px; */
     height: 100px;
