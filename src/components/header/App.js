@@ -14,8 +14,8 @@ class App extends Component{
         return(
             <header className="App-header">
             <nav>
-              <span className='nav-span'><Link to='/'>Home</Link></span>
-              <span className='nav-span'><Link to='/feeds'>Feeds</Link></span>
+              <span className='nav-span'><Link to='/' style={{ textDecoration: 'none',color:'white' }}>Home</Link></span>
+              <span className='nav-span'><Link to='/feeds' style={{ textDecoration: 'none',color:'white' }}>Feeds</Link></span>
               <span className='nav-span'>Login</span>
               <input type='text' placeholder ='search'/>
             </nav>

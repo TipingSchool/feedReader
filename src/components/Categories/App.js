@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import mongo from './mongo.jpg';
 import node from './node.png';
 import react from './react.png';
@@ -25,7 +26,8 @@ class App extends Component {
         <div className="stat">
           </div>
         <div className='flex-container' >
-         {this.state.CardValue.map((value,i) =>(  <CatCard key={i} {...value}  />))}
+         {this.state.CardValue.map((value,i) =>( <Link to={`/feeds/${value.name}`  } style={{ textDecoration: 'none',color:'black' }}>
+          <CatCard key={i} {...value}  /></Link>))}
         </div>
       </div>
     );
@@ -37,13 +39,19 @@ class App extends Component {
 class CatCard extends Component{
   constructor(props){
     super(props);
-  
+    this.state ={
+          redirect:false
+    }
+  this.ClickHandler =this.ClickHandler.bind(this);
   }
   ClickHandler = () =>{
-    alert('you clicked ' + this.props.name);
+    this.setState({redirect: true});
   }
 
   render(){
+    // if (this.state.redirect) {
+    //   return <Redirect push to='/feeds/`$(props.name)`'/>;
+    // }
     return(
     <div>
       <div className='cat-card-box' onClick = {this.ClickHandler}>
