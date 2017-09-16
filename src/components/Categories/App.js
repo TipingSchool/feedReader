@@ -26,7 +26,7 @@ class App extends Component {
         <div className="stat">
           </div>
         <div className='flex-container' >
-         {this.state.CardValue.map((value,i) =>( <Link to={`/feeds/${value.name}`  } style={{ textDecoration: 'none',color:'black' }}>
+         {this.state.CardValue.map((value,i) =>( <Link key={i} to={`/feeds/${value.name}`  } style={{ textDecoration: 'none',color:'black' }}>
           <CatCard key={i} {...value}  /></Link>))}
         </div>
       </div>
@@ -36,33 +36,16 @@ class App extends Component {
 
 
 
-class CatCard extends Component{
-  constructor(props){
-    super(props);
-    this.state ={
-          redirect:false
-    }
-  this.ClickHandler =this.ClickHandler.bind(this);
-  }
-  ClickHandler = () =>{
-    this.setState({redirect: true});
-  }
-
-  render(){
-    // if (this.state.redirect) {
-    //   return <Redirect push to='/feeds/`$(props.name)`'/>;
-    // }
-    return(
+const CatCard = (props) =>(
     <div>
-      <div className='cat-card-box' onClick = {this.ClickHandler}>
+      <div className='cat-card-box' >
         <div>
-            <img src={this.props.imgsrc} className='cat-card-img' alt={this.props.name}/>
-            <p> {this.props.name} </p>
+            <img src={props.imgsrc} className='cat-card-img' alt={props.name}/>
+            <p> {props.name} </p>
             </div>
         </div>
       </div>
     );
-  }
-}
+ 
 
 export default App;
