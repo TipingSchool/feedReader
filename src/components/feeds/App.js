@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import html from '../Categories/html.jpg'
 import node1 from '../Categories/node1.png'
+import FeedCard from './feedcard'
 import axios from 'axios';
 
 class App extends Component{
@@ -10,15 +11,19 @@ class App extends Component{
     this.state ={
       feeds:[]}
   }
-  componentDidMount(){
+  componentWillMount(){
      var self = this;
-    if(this.props.match.params.name === 'NodeJS'){
-   axios.get('http://localhost:4000/nodejs').then(function(response){
+   axios.get(`http://localhost:4000${self.props.match.url}`).then(function(response){
        self.setState({feeds:response.data})
+       console.log(self.props.match.url)
    }).catch(function (error){
      console.log(error)
    })
-  }
+  
+}
+
+componentWillUnmount(){
+  this.setState({feeds:[]})
 }
     render(){
      return(
@@ -36,24 +41,6 @@ class App extends Component{
     }
 
 }
-
-const FeedCard = (props) => (
-       <div>
-           <div className='feed-card-box'>
-             <div className='img-card col-md-2'>
-                <img className='feed-card-img' src={node1} alt='try'/>
-              </div>
-              <div className='discription-box col-md-10'>
-               <p className='heading'> {props.title}</p>
-               <div>
-                 <author> {props.creator}</author>
-               <date>{props.date}</date>
-               </div>
-               <div className='discription'>{props.description.substring(0,150)+'...'} </div>
-                </div>
-           </div>
-       </div>
-   )
 
 
 

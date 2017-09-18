@@ -13,8 +13,8 @@ class App extends Component {
         constructor(props){
           super(props);
           this.state ={
-            CardValue :[{'imgsrc':mongo, 'name':'MongoDB'},{'imgsrc':node, 'name':'NodeJS'},{'imgsrc':react, 'name':'ReactJS'},
-            {'imgsrc':webdev, 'name':'Web Development'},{'imgsrc':devop, 'name':'DevOps'},{'imgsrc':html, 'name':'HTML5'}]
+            CardValue :[{'imgsrc':mongo, 'title':'MongoDB','name':'mongodb'},{'imgsrc':node, 'title':'NodeJS','name':'nodejs'},{'imgsrc':react, 'title':'ReactJS','name':'reactjs'},
+            {'imgsrc':webdev, 'title':'Web Development','name':'webdevlopment'},{'imgsrc':devop, 'title':'DevOps','name':'devops'},{'imgsrc':html, 'title':'HTML5','name':'html5'}]
           }
        
         }
@@ -41,7 +41,7 @@ const CatCard = (props) =>(
       <div className='cat-card-box' >
         <div>
             <img src={props.imgsrc} className='cat-card-img' alt={props.name}/>
-            <p> {props.name} </p>
+            <p> {props.title} </p>
             </div>
         </div>
       </div>
