@@ -18,7 +18,7 @@ const FeedCard = (props) => (
           </div>
         </div>
         <div>
-             
+               
         </div>
     </div>
 )
