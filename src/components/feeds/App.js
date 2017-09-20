@@ -16,7 +16,7 @@ class App extends Component{
      var self = this;
    axios.get(`http://localhost:4000${self.props.match.url}`).then(function(response){
        self.setState({feeds:response.data})
-       console.log(self.props.match.url)
+       
    }).catch(function (error){
      console.log(error)
    })
@@ -37,7 +37,7 @@ class App extends Component{
         </div>
 
         <div>
-        {this.state.feeds.map((value,i) =>(  <Modal key={i} {...value}  />))}
+         <Modal value ={this.state.feeds[5]}  />
         </div>
         
       </div>
