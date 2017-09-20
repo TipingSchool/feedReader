@@ -14,11 +14,13 @@ const FeedCard = (props) => (
               <author> { props.creator }</author>
               <date>{ new Date(props.date).toDateString() }</date>
             </div>
-            <div className='description'>{ props.description.substring(0,150) + '...' }</div>
+            <div className='description'>
+              { props.description.substring(0,150) + '...' }
+            </div>
           </div>
         </div>
         <div>
-               
+                             
         </div>
     </div>
 )
