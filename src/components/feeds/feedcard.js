@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import './App.css';
 import node1 from '../Categories/node1.png'
 
-const side_panel = {
+const checkboxStyle = {
   float : "right",
   marginLeft: "10px",
   marginTop : "60px",
-  fontSize : "15px",
-  transform : "scale(1.2)"
+  fontSize : "15px"
 }
 
 const checkbox_text = {
@@ -32,8 +31,8 @@ const FeedCard = (props) => (
             </div>
           </div>
         </div>
-        <div style = { side_panel }>
-            <input type = "checkbox" name = "select_feed"/><span style = { checkbox_text }></span><br/>
+        <div style = { checkboxStyle }>
+            <input type = "checkbox" name = "select_feed" value = { props.title }/><span style = { checkbox_text }></span><br/>
         </div>
     </div>
 );

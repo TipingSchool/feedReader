@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import html from '../Categories/html.jpg'
-import node1 from '../Categories/node1.png'
-import FeedCard from './feedcard'
+import html from '../Categories/html.jpg';
+import node1 from '../Categories/node1.png';
+import UserActions from "./User_actions";
+import FeedCard from './feedcard';
 import axios from 'axios';
 
 class App extends Component{
@@ -28,14 +29,11 @@ componentWillUnmount(){
     render(){
      return(
       <div className="App">
-        <div className="stat">
-        </div>
-        
+        <div className="stat"/>
+        <UserActions/>
         <div className='flex-container'>
             {this.state.feeds.map((value,i) =>(  <FeedCard key={i} {...value}  />))}
-            
         </div>
-        
       </div>
      )
     }
