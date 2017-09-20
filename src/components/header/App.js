@@ -3,8 +3,8 @@ import {Link} from 'react-router-dom'
 import './App.css';
 
 const navbar_style = {
-    textDecoration: 'none',
-    color:'white'
+    textDecoration : 'none',
+    color : 'white'
 };
 
 class App extends Component{

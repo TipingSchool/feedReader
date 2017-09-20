@@ -8,6 +8,10 @@ import devop from './devops.jpg';
 import html from './html.jpg';
 import './App.css';
 
+const CatCard_style = {
+  textDecoration : "none",
+  color : "black"
+};
 
 class App extends Component {
         constructor(props){
@@ -26,7 +30,7 @@ class App extends Component {
         <div className="stat">
           </div>
         <div className='flex-container' >
-         {this.state.CardValue.map((value,i) =>( <Link key={i} to={`/feeds/${value.name}`  } style={{ textDecoration: 'none',color:'black' }}>
+         {this.state.CardValue.map((value,i) =>( <Link key={i} to={`/feeds/${value.name}`  } style={ CatCard_style }>
           <CatCard key={i} {...value}  /></Link>))}
         </div>
       </div>
