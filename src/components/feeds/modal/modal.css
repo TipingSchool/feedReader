@@ -1,0 +1,37 @@
+.modal-box{
+    margin:40px 25%;
+    /* height: 700px; */
+    border: 1px solid black ;
+    border-radius: 10px;
+}
+
+.modal-img{
+    margin: 30px 37%;
+}
+
+.modal-title{
+    font-size: 22px;
+    text-align: center;
+    font-family: monospace;
+}
+.modal-description{
+    clear: both;
+    margin: 10px 10%;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #306C6D;
+    font-family: cursive;
+}
+
+.modal-author{
+    margin: 0 10px;
+    color: #7A4609;
+    float: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+}
+.modal-link{
+    float: right;
+    font-size: 14px;
+    text-decoration: none;
+}

@@ -3,6 +3,7 @@ import './App.css';
 import html from '../Categories/html.jpg'
 import node1 from '../Categories/node1.png'
 import FeedCard from './feedcard'
+import Modal from './modal/modal'
 import axios from 'axios';
 
 class App extends Component{
@@ -22,9 +23,7 @@ class App extends Component{
   
 }
 
-componentWillUnmount(){
-  this.setState({feeds:[]})
-}
+
     render(){
      return(
       <div className="App">
@@ -32,8 +31,13 @@ componentWillUnmount(){
         </div>
         
         <div className='flex-container'>
-            {this.state.feeds.map((value,i) =>(  <FeedCard key={i} {...value}  />))}
+            {/* {this.state.feeds.map((value,i) =>(  <FeedCard key={i} {...value}  />))} */}
             
+            
+        </div>
+
+        <div>
+        {this.state.feeds.map((value,i) =>(  <Modal key={i} {...value}  />))}
         </div>
         
       </div>
