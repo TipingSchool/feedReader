@@ -77,6 +77,41 @@ date{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 12px;
 }
+
+.userButton{
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.userPublish{
+    background-color: #4CAF50;
+}
+
+.userPublish:hover{
+    background-color: #2A752C;
+}
+
+.userDelete{
+    background-color : #F44336;
+}
+.userDelete:hover{
+    background-color : #992E2E;
+}
+.userArchive{
+    background-color: #008CBA;
+}
+.userArchive:hover{
+    background-color: #0D5A72;
+}
+
+
 @media(min-width:768px){
     .col-md-2{
         width:16.66%;

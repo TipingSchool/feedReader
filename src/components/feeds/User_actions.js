@@ -1,23 +1,11 @@
 import React, { Component } from 'react';
-// import "./App.css";
+import "./App.css";
 
 const UserActions_style = {
     position : "fixed",
-    float : "right",
-    marginTop : "50px"
-
-};
-
-const buttonStylePublish = {
-    color
-};
-
-const buttonStyleDelete = {
-    color
-};
-
-const buttonStyleArchive = {
-    color
+    // float : "right",
+    marginTop : "50px",
+    marginLeft : "1080px"
 };
 
 class UserActions extends Component{
@@ -30,9 +18,9 @@ class UserActions extends Component{
     render(){
         return(
             <div style = { UserActions_style }>
-                <button>Publish</button>
-                <button>Archive</button>
-                <button>Delete</button>
+                <button className = "userButton userPublish">Publish</button>
+                <button className = "userButton userArchive">Archive</button>
+                <button className = "userButton userDelete">Delete</button>
             </div>
         );
     }
