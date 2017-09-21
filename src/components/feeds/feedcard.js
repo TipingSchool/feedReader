@@ -8,14 +8,8 @@ const checkboxStyle = {
   marginLeft: "10px",
   marginTop : "60px",
   fontSize : "15px"
-}
+};
 
-// const checkbox_text = {
-//   paddingBottom : "5px",
-//   marginBottom : "10px"
-// };
-
-// const FeedCard = (props) => (
 class FeedCard extends Component{    
   constructor(props){
     super(props);
@@ -44,9 +38,7 @@ class FeedCard extends Component{
             <img className='feed-card-img' src={ node1 } alt='try'/>
           </div>
           <div className='description-box col-md-10'>
-            <p className='heading'> { this.props.title }</p>
             <div>
-              <author> { this.props.creator }</author>
               <p className='heading'> {this.props.title }</p>
             </div>
             <div>
