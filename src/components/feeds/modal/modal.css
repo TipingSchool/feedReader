@@ -2,11 +2,14 @@
    position: fixed;
    top: 50%;
    left:50%;
+   width: 40%;
    transform: translate(-50%,-50%);
    border-radius: 5px;
    z-index: 9999;
    background: #fff;
+
 }
+
 
 
 .backdropstyle{
@@ -19,25 +22,27 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 .close{
-    margin: 10px;
+    margin: 5px;
 }
 
 .modal-img{
-    margin: 30px 33%;
+    margin: 10px 29%;
 }
 
 .modal-title{
-    font-size: 22px;
+    font-size: 20px;
     text-align: center;
-    font-family: monospace;
+    margin: 0 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    
 }
 .modal-description{
     clear: both;
     margin: 10px 10%;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 1.5;
     color: #306C6D;
-    font-family: cursive;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .modal-author{
@@ -48,7 +53,7 @@
     font-size: 14px;
 }
 .modal-link{
-    margin-right: 20px;
+    margin:10px 20px;
     float: right;
     font-size: 14px;
     text-decoration: none;

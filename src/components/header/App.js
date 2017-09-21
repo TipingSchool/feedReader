@@ -8,10 +8,8 @@ const navbar_style = {
 };
 
 class App extends Component{
-    constructor(props){
-        super(props);
-    }
 
+    
     render(){
         return(
             <header className="App-header">
