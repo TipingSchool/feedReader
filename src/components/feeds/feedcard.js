@@ -24,13 +24,13 @@ class FeedCard extends Component{
     return(
     <div>
         <div className='feed-card-box' onClick={this.openModal}>
-          <div className='img-card col-md-2'>
+          <div className='img-card col-md-3'>
             <img className='feed-card-img' src={ node1 } alt='try'/>
           </div>
-          <div className='description-box col-md-10'>
+          <div className='description-box col-md-9'>
             <p className='heading'> {this.props.title }</p>
             <div>
-              <author> {this.props.creator }</author>
+              <author> {this.props.creator.substring(0,20) }</author>
               <date>{ new Date(this.props.date).toDateString() }</date>
             </div>
             <div className='description'>

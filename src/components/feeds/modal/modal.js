@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './modal.css';
 import node1 from './node1.png'
+import FaClose from 'react-icons/lib/fa/close';
+
 
 
 
@@ -21,7 +23,7 @@ class Modal extends Component{
      return(
        <div>
          <div className='modal-box'>
-         <p className='close'><button onClick={ this.props.onClose }>close</button></p>
+         <p className='close'><FaClose onClick={ this.props.onClose } /></p>
             <div className='modal-img'>
               <img className='' src={node1} alt='try'/>
             </div>
