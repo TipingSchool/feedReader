@@ -78,6 +78,9 @@ date{
     font-size: 12px;
 }
 
+
+/* User action button CSS */
+
 .userButton{
     border: none;
     color: white;
