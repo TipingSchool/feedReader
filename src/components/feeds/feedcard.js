@@ -5,7 +5,7 @@ import node1 from '../Categories/node1.png'
 
 const checkboxStyle = {
   float : "right",
-  marginLeft: "10px",
+  marginLeft: "30px",
   marginTop : "60px",
   fontSize : "15px"
 };
@@ -53,13 +53,12 @@ class FeedCard extends Component{
             <Modal  isOpen={this.state.isModalOpen} onClose={this.closeModal}  child={this.props}/>
             </div>
         </div>
-        <div style = { checkboxStyle }>
+      </div>
+      <div style = { checkboxStyle }>
             <input type = "checkbox" name = "select_feed" value = { this.state.title } onChange = { this.handleCheckChange }/><br/>
-        </div>
-    </div>
+      </div>
     </div>
     );
-        
   }
 }
 
