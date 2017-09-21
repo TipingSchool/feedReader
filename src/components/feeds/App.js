@@ -14,10 +14,10 @@ class App extends Component{
   componentWillMount(){
      var self = this;
      axios.get(`http://localhost:4000${self.props.match.url}`).then(function(response){
-       self.setState({feeds:response.data})
+       self.setState({feeds:response.data});
       }).catch(function (error){
-        console.log(error)
-      })
+        console.log(error);
+      });
   }
 
     render(){

@@ -18,10 +18,6 @@ class FeedCard extends Component{
         isModalOpen: false
       }
     }
-
-    handleCheckChange = () => {
-    }
-    
     openModal = () => {
       this.setState({isModalOpen:!(this.state.isModalOpen)});
     }
@@ -29,6 +25,10 @@ class FeedCard extends Component{
     closeModal = () =>{
       this.setState({isModalOpen:!(this.state.isModalOpen)});
     }
+
+    selectFunction = () => {
+      
+    } 
 
   render(){ 
     return(
@@ -48,12 +48,12 @@ class FeedCard extends Component{
             </div>
             <div >
            
-            <Modal   isOpen={this.state.isModalOpen} onClose={this.closeModal}  child={this.props}/>
+            <Modal isOpen={this.state.isModalOpen} onClose={this.closeModal}  child={this.props}/>
             </div>
         </div>
       </div>
       <div className = "selectButtonDiv">
-        <button className = "userSelectButton">+</button>
+        <button className = "userSelectButton" onClick = { this.selectFunction }>+</button>
       </div>
     </div>
     );
