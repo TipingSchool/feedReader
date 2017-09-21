@@ -114,6 +114,28 @@ date{
     background-color: #0D5A72;
 }
 
+.selectButtonDiv{
+    display: inline-block;
+    padding-bottom: 110px;
+    margin-left: -25px;
+}
+.userSelectButton{
+    color: #FFF;
+    background-color: #037FE5;
+    cursor : pointer;
+    border : none;
+    font-weight: 600;
+    font-size : 15px;
+    border-radius: 10px;
+    float : right;
+    text-decoration: none;
+}
+.userSelectButton:active{
+    background-color: #00F;
+}
+.userSelectButton:focus{
+   outline: none;
+}
 
 @media(min-width:768px){
     .col-md-2{

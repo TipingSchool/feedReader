@@ -40,6 +40,7 @@ class FeedCard extends Component{
           <div className='description-box col-md-10'>
             <div>
               <p className='heading'> {this.props.title }</p>
+              
             </div>
             <div>
               <author> {this.props.creator }</author>
@@ -48,14 +49,12 @@ class FeedCard extends Component{
             <div className='description'>
               { this.props.description.substring(0,150) + '...' }
             </div>
-            <div>
-           
-            <Modal  isOpen={this.state.isModalOpen} onClose={this.closeModal}  child={this.props}/>
-            </div>
-        </div>
+            
+           <Modal  isOpen={this.state.isModalOpen} onClose={this.closeModal}  child={this.props}/>
+          </div>
       </div>
-      <div style = { checkboxStyle }>
-            <input type = "checkbox" name = "select_feed" value = { this.state.title } onChange = { this.handleCheckChange }/><br/>
+      <div className = "selectButtonDiv">
+        <button className = "userSelectButton">+</button>
       </div>
     </div>
     );
