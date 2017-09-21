@@ -36,9 +36,9 @@ class FeedCard extends Component{
             <div className='description'>
               { this.props.description.substring(0,150) + '...' }
             </div>
-            <div>
+            <div >
            
-            <Modal  isOpen={this.state.isModalOpen} onClose={this.closeModal}  child={this.props}/>
+            <Modal   isOpen={this.state.isModalOpen} onClose={this.closeModal}  child={this.props}/>
             </div>
           </div>
         </div>

@@ -7,10 +7,8 @@ class App extends Component {
     render(){
         return(
             <div className='App'>
-            <Header/>
-            <Router/>
-            {/* <Categories/> */}
-            {/* <Feeds /> */}
+                <Header/>
+                <Router/>
             </div>
         )
     }
