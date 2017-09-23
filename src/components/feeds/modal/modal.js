@@ -8,22 +8,22 @@ import FaClose from 'react-icons/lib/fa/close';
 
 class Modal extends Component{
   constructor(props){
-    super(props)
+    super(props);
   }
   
   close = () => {
-    this.props.onClose()
+    this.props.onClose();
   }
 
    render(){
      if(this.props.isOpen === false){
-       return null
+       return null;
      }
 
      return(
        <div>
          <div className='modal-box'>
-         <p className='close'><FaClose onClick={ this.props.onClose } /></p>
+         <p className='close'><FaClose onClick={ this.props.onClose }/></p>
             <div className='modal-img'>
               <img className='' src={node1} alt='try'/>
             </div>

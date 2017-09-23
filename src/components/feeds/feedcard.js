@@ -3,22 +3,32 @@ import './App.css';
 import Modal from './modal/modal';
 import node1 from '../Categories/node1.png'
 
-class FeedCard extends Component{
-   constructor(props){
-     super(props)
-     this.state ={
-      isModalOpen: false
+const checkboxStyle = {
+  float : "right",
+  marginLeft: "30px",
+  marginTop : "60px",
+  fontSize : "15px"
+};
+
+class FeedCard extends Component{    
+  constructor(props){
+    super(props);
+      this.state = {
+        title : this.props.title,
+        isModalOpen: false
+      }
     }
-   }
-
-   openModal = () => {
-    this.setState({isModalOpen:!(this.state.isModalOpen)});
+    openModal = () => {
+      this.setState({isModalOpen:!(this.state.isModalOpen)});
+    }
     
-  }
+    closeModal = () =>{
+      this.setState({isModalOpen:!(this.state.isModalOpen)});
+    }
 
-  closeModal = () =>{
-    this.setState({isModalOpen:!(this.state.isModalOpen)});
-  }
+    selectFunction = () => {
+      
+    } 
 
   render(){ 
     return(
@@ -38,15 +48,15 @@ class FeedCard extends Component{
             </div>
             <div >
            
-            <Modal   isOpen={this.state.isModalOpen} onClose={this.closeModal}  child={this.props}/>
+            <Modal isOpen={this.state.isModalOpen} onClose={this.closeModal}  child={this.props}/>
             </div>
-          </div>
         </div>
-        <div>
-                             
-        </div>
+      </div>
+      <div className = "selectButtonDiv">
+        <button className = "userSelectButton" onClick = { this.selectFunction }>+</button>
+      </div>
     </div>
-)
+    );
   }
 }
 

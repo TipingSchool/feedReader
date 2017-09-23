@@ -7,7 +7,7 @@
    border-radius: 5px;
    z-index: 9999;
    background: #fff;
-
+   cursor: default;
 }
 
 
@@ -22,7 +22,9 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 .close{
-    margin: 5px;
+    margin-left : 5px;
+    cursor : pointer;
+    width :  20px;
 }
 
 .modal-img{

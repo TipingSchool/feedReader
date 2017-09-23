@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import FeedCard from './feedcard'
-
+import UserActions from "./User_actions";
+import FeedCard from './feedcard';
 import axios from 'axios';
 
 class App extends Component{
@@ -13,21 +13,18 @@ class App extends Component{
 
   componentWillMount(){
      var self = this;
-   axios.get(`http://localhost:4000${self.props.match.url}`).then(function(response){
-       self.setState({feeds:response.data})
-       
-   }).catch(function (error){
-     console.log(error)
-   })
-  
-}
+     axios.get(`http://localhost:4000${self.props.match.url}`).then(function(response){
+       self.setState({feeds:response.data});
+      }).catch(function (error){
+        console.log(error);
+      });
+  }
 
     render(){
      return(
       <div className="App">
-        <div className="stat">
-        </div>
-        
+        <div className="stat"/>
+        <UserActions/>
         <div className='flex-container'>
             {this.state.feeds.map((value,i) =>(  <FeedCard key={i} {...value}  />))}   
         </div>  
