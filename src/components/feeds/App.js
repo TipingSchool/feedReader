@@ -21,25 +21,41 @@ class App extends Component{
         console.log(error);
       });
   }
-
-  addingFeedTitleToArray = (feedTitle) => {
-    
-    this.selectedFeeds.push(feedTitle);
+  
+  removingFeedTitleFromArray = (feedTitle) => {
+    this.selectedFeeds.splice(this.selectedFeeds.indexOf(feedTitle), 1);
     console.log(this);
   }
 
+  addingFeedTitleToArray = (feedTitle) => {
+    this.selectedFeeds.push(feedTitle);
+    console.log(this);
+  }
     render(){
+      if(this.selectedFeeds.length === 0){
       console.log(this);
-     return(
-      <div className="App">
-        <div className="stat"/>
-        <UserActions/>
-        <div className='flex-container'>
-            {this.state.feeds.map((value,i) =>(  <FeedCard key={i} {...value} addingFeedTitleToArray = { this.addingFeedTitleToArray } />))}   
-        </div>  
-      </div>
-     )
+        return(
+          <div className="App">
+            <div className="stat"/>
+            <div className='flex-container'>
+                {this.state.feeds.map((value,i) =>(  <FeedCard key={i} {...value} addingFeedTitleToArray = { this.addingFeedTitleToArray } removingFeedTitleFromArray = { this.removingFeedTitleFromArray }/>))}   
+            </div>  
+          </div>
+          );
     }
+    else{
+      return(
+        <div className="App">
+          <div className="stat"/>
+          <UserActions/>
+          <div className='flex-container'>
+              {this.state.feeds.map((value,i) =>(  <FeedCard key={i} {...value} addingFeedTitleToArray = { this.addingFeedTitleToArray } removingFeedTitleFromArray = { this.removingFeedTitleFromArray }/>))}   
+          </div>  
+        </div>
+      );
+    }
+  }
 }
+
 
 export default App;

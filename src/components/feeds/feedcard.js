@@ -43,6 +43,7 @@ class FeedCard extends Component{
     }
 
     else{
+      this.props.removingFeedTitleFromArray(this.props.title);
       this.setState(
         {
           isFeedSelected : !(this.state.isFeedSelected),
