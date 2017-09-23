@@ -10,20 +10,12 @@ class FeedCard extends Component{
     super(props);
       this.state = {
         isModalOpen: false,
-        feedCardBoxCss : {
-          display: "inline-block",
-          backgroundColor: "rgba(242, 240, 245, 0.99)",
-          width:"600px",
-          height: "130px",
-          margin: "20px",
-          boxSizing: "border-box",
-          boxShadow: "4px 5px 6px darkgrey",
-          fontSize: "30px",
-          fontFamily: "sans-serif",
-          fontWeight: "600",
-          cursor: "pointer",
-          borderLeft : "3px solid white"
-        }
+        feedImageCss : {
+          width : "100%",
+          height : "130px",
+          opacity : "1",
+        },
+        isFeedSelected : false
       }; 
     
     }
@@ -36,33 +28,43 @@ class FeedCard extends Component{
     }
 
     selectFunction = () => {
+    
+     if(!this.state.isFeedSelected){ 
       this.props.addingFeedTitleToArray(this.props.title);
-      
       this.setState({
-        feedCardBoxCss : {
-            display: "inline-block",
-            backgroundColor: "rgba(242, 240, 245, 0.99)",
-            width:"600px",
-            height: "130px",
-            margin: "20px",
-            boxSizing: "border-box",
-            boxShadow: "4px 5px 6px darkgrey",
-            fontSize: "30px",
-            fontFamily: "sans-serif",
-            fontWeight: "600",
-            cursor: "pointer",
-            borderLeft : "3px solid black"
+        isFeedSelected : !(this.state.isFeedSelected),
+        feedImageCss : {
+          width : "100%",
+          height : "130px",
+          opacity : "0.5",
+          zIndex : "1"
         }
       });
+    }
+
+    else{
+      this.setState(
+        {
+          isFeedSelected : !(this.state.isFeedSelected),
+          feedImageCss : {
+            width : "100%",
+            height : "130px",
+            opacity : "1",
+            zIndex : "1"
+          }
+        }
+      );
+    }
+
 
     } 
 
   render(){   
     return(
     <div>
-        <div style = { this.state.feedCardBoxCss } onClick={this.openModal}>
+        <div className = "feed-card-box" onClick={this.openModal}>
           <div className='img-card col-md-3'>
-            <img className='feed-card-img' src={ node1 } alt='try'/>
+            <img style = { this.state.feedImageCss } src={ node1 } alt='try'/>
           </div>
           <div className='description-box col-md-9'>
             <p className='heading'> {this.props.title }</p>
