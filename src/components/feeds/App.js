@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import UserActions from "./User_actions";
 import FeedCard from './feedcard';
 import axios from 'axios';
 
@@ -23,6 +24,7 @@ class App extends Component{
      return(
       <div className="App">
         <div className="stat"/>
+        <UserActions/>
         <div className='flex-container'>
             {this.state.feeds.map((value,i) =>(  <FeedCard key={i} {...value}  />))}   
         </div>  
