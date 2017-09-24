@@ -1,29 +1,43 @@
 import React, { Component } from 'react';
 import "./App.css";
 
-const UserActions_style = {
-    position : "fixed",
-    // float : "right",
-    marginTop : "50px",
-    marginLeft : "1080px"
+const UserActions_style1 = {
+    position: "fixed",
+    marginTop: "50px",
+    marginLeft: "1080px",
+    width: "255px",
+    display : "none"
 };
 
-class UserActions extends Component{
-    constructor(props){
-        super(props);
-        // this.state = {
-
-        // };
-    }
-    render(){
-        return(
-            <div style = { UserActions_style }>
-                <button className = "userButton userPublish">Publish</button>
-                <button className = "userButton userArchive">Archive</button>
-                <button className = "userButton userDelete">Delete</button>
-            </div>
-        );
-    }
+const UserActions_style2 = {
+    position: "fixed",
+    marginTop: "50px",
+    marginLeft: "1080px",
+    width: "255px",
+    display : "block"
 }
+
+class UserActions extends Component{
+    render(){
+        if(this.props.UserActionDisplay){
+            return(
+                <div style = { UserActions_style1 }>
+                    <button className = "userButton userPublish">Publish</button>
+                    <button className = "userButton userArchive">Archive</button>
+                    <button className = "userButton userDelete">Delete</button>
+                </div>
+            );
+        }
+        else{
+                return(
+                    <div style = { UserActions_style2 }>
+                        <button className = "userButton userPublish">Publish</button>
+                        <button className = "userButton userArchive">Archive</button>
+                        <button className = "userButton userDelete">Delete</button>
+                    </div>
+                );
+            }
+        }
+    }
 
 export default UserActions;
