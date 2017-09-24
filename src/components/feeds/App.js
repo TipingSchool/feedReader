@@ -9,10 +9,11 @@ class App extends Component{
     super(props);
     this.state = {
       feeds:[],
+      selectedFeedLength : 0
     }
    this.selectedFeeds = [];
   }
-
+   
   componentWillMount(){
      var self = this;
      axios.get(`http://localhost:4000${self.props.match.url}`).then(function(response){
@@ -24,37 +25,36 @@ class App extends Component{
   
   removingFeedTitleFromArray = (feedTitle) => {
     this.selectedFeeds.splice(this.selectedFeeds.indexOf(feedTitle), 1);
+    this.setState(
+      {
+        selectedFeedLength : this.state.selectedFeedLength - 1
+      }
+  );
     console.log(this);
   }
 
   addingFeedTitleToArray = (feedTitle) => {
     this.selectedFeeds.push(feedTitle);
+    this.setState(
+    {
+      selectedFeedLength : this.state.selectedFeedLength + 1
+    }
+  );
     console.log(this);
   }
     render(){
-      if(this.selectedFeeds.length === 0){
-      console.log(this);
-        return(
-          <div className="App">
-            <div className="stat"/>
-            <div className='flex-container'>
-                {this.state.feeds.map((value,i) =>(  <FeedCard key={i} {...value} addingFeedTitleToArray = { this.addingFeedTitleToArray } removingFeedTitleFromArray = { this.removingFeedTitleFromArray }/>))}   
-            </div>  
-          </div>
-          );
-    }
-    else{
+      var UserActionDisplay = !(this.state.selectedFeedLength) || false;
       return(
         <div className="App">
           <div className="stat"/>
-          <UserActions/>
+          <UserActions UserActionDisplay = { UserActionDisplay }/>
           <div className='flex-container'>
               {this.state.feeds.map((value,i) =>(  <FeedCard key={i} {...value} addingFeedTitleToArray = { this.addingFeedTitleToArray } removingFeedTitleFromArray = { this.removingFeedTitleFromArray }/>))}   
           </div>  
         </div>
       );
     }
-  }
+  
 }
 
 
