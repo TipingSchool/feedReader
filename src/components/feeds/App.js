@@ -9,7 +9,7 @@ class App extends Component{
     super(props);
     this.state = {
       feeds:[],
-      selectedFeedLength : 0
+      selectedFeedCount : 0
     }
    this.selectedFeeds = [];
   }
@@ -27,7 +27,7 @@ class App extends Component{
     this.selectedFeeds.splice(this.selectedFeeds.indexOf(feedTitle), 1);
     this.setState(
       {
-        selectedFeedLength : this.state.selectedFeedLength - 1
+        selectedFeedCount : this.state.selectedFeedCount - 1
       }
   );
     console.log(this);
@@ -37,17 +37,17 @@ class App extends Component{
     this.selectedFeeds.push(feedTitle);
     this.setState(
     {
-      selectedFeedLength : this.state.selectedFeedLength + 1
+      selectedFeedCount : this.state.selectedFeedCount + 1
     }
   );
     console.log(this);
   }
     render(){
-      var UserActionDisplay = !(this.state.selectedFeedLength) || false;
+      var UserActionDisplay = !(this.state.selectedFeedCount) || false;
       return(
         <div className="App">
           <div className="stat"/>
-          <UserActions UserActionDisplay = { UserActionDisplay }/>
+          <UserActions UserActionDisplay = { UserActionDisplay } selectedCount = { this.state.selectedFeedCount }/>
           <div className='flex-container'>
               {this.state.feeds.map((value,i) =>(  <FeedCard key={i} {...value} addingFeedTitleToArray = { this.addingFeedTitleToArray } removingFeedTitleFromArray = { this.removingFeedTitleFromArray }/>))}   
           </div>  
