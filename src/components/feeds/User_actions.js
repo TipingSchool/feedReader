@@ -34,6 +34,7 @@ class UserActions extends Component{
                         <button className = "userButton userPublish">Publish</button>
                         <button className = "userButton userArchive">Archive</button>
                         <button className = "userButton userDelete">Delete</button>
+                        <div>{ this.props.selectedCount } selected(I will style it later)</div>
                     </div>
                 );
             }
