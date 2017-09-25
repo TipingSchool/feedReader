@@ -12,13 +12,11 @@ class FeedCard extends Component{
         isModalOpen: false
       }
     }
+    
     openModal = () => {
       this.setState({isModalOpen:!(this.state.isModalOpen)});
     }
     
-    closeModal = () =>{
-      this.setState({isModalOpen:!(this.state.isModalOpen)});
-    }
 
 
 
@@ -40,7 +38,7 @@ class FeedCard extends Component{
             </div>
             <div >
            
-            <Modal isOpen={this.state.isModalOpen} onClose={this.closeModal}  child={this.props}/>
+            <Modal isOpen={this.state.isModalOpen} onClose={this.openModal}  child={this.props}/>
             </div>
         </div>
       </div>
