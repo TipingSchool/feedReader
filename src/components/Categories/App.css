@@ -5,10 +5,12 @@
   justify-content: space-evenly;
 }
 .cat-card-box{
+  max-width: 250px;
+  background-color: white;
   /* width: 20%; */
   /* border: 1px solid black; */
   text-align: center;
-  height: 270px;
+  height: 250px;
   margin: 20px;
   box-sizing: border-box;
   box-shadow: 4px 5px 6px darkgrey;
