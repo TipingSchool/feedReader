@@ -4,13 +4,20 @@ import Modal from './modal/modal';
 import node1 from '../Categories/node1.png'
 
 
+
 class FeedCard extends Component{    
   constructor(props){
     super(props);
       this.state = {
-        title : this.props.title,
-        isModalOpen: false
-      }
+        isModalOpen: false,
+        feedImageCss : {
+          width : "100%",
+          height : "130px",
+          opacity : "1",
+        },
+        isFeedSelected : false
+      }; 
+    
     }
     
     openModal = () => {
@@ -18,14 +25,45 @@ class FeedCard extends Component{
     }
     
 
+    selectFunction = () => {
+    
+     if(!this.state.isFeedSelected){ 
+      this.props.addingFeedTitleToArray(this.props.title);
+      this.setState({
+        isFeedSelected : !(this.state.isFeedSelected),
+        feedImageCss : {
+          width : "100%",
+          height : "130px",
+          opacity : "0.5",
+          zIndex : "1"
+        }
+      });
+    }
+
+    else{
+      this.props.removingFeedTitleFromArray(this.props.title);
+      this.setState(
+        {
+          isFeedSelected : !(this.state.isFeedSelected),
+          feedImageCss : {
+            width : "100%",
+            height : "130px",
+            opacity : "1",
+            zIndex : "1"
+          }
+        }
+      );
+    }
 
 
-  render(){ 
+    } 
+
+  render(){   
     return(
     <div>
-        <div className='feed-card-box' onClick={this.openModal}>
+        <div className = "feed-card-box" onClick={this.openModal}>
           <div className='img-card col-md-3'>
-            <img className='feed-card-img' src={ node1 } alt='try'/>
+            <img style = { this.state.feedImageCss } src={ node1 } alt='try'/>
           </div>
           <div className='description-box col-md-9'>
             <p className='heading'> {this.props.title }</p>
@@ -40,7 +78,10 @@ class FeedCard extends Component{
            
             <Modal isOpen={this.state.isModalOpen} onClose={this.openModal}  child={this.props}/>
             </div>
+          </div>
         </div>
+      <div className = "selectButtonDiv">
+        <button className = "userSelectButton" onClick = { this.selectFunction }>+</button>
       </div>
     </div>
     );
