@@ -21,7 +21,9 @@ class FeedCard extends Component{
 
 
   render(){ 
+    console.log(this.state)
     return(
+      
     <div>
         <div className='feed-card-box' onClick={this.openModal}>
           <div className='img-card col-md-3'>

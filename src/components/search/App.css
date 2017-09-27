@@ -1,0 +1,11 @@
+.nav-span{
+    margin-inline-end: 30px;
+    display: inline;
+}
+
+.search-icon{
+    background-color: #2b2929;
+    color: white;
+    /* font-size: 20px; */
+    margin: 5px;
+}
