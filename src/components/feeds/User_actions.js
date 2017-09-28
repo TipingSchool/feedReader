@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "./App.css";
+import axios from 'axios';
 
 const UserActions_style1 = {
     position: "fixed",
@@ -18,7 +19,12 @@ const UserActions_style2 = {
 }
 
 class UserActions extends Component{
+    constructor(props){
+        super(props);
+    }
+
     render(){
+        console.log(this);
         if(this.props.UserActionDisplay){
             return(
                 <div style = { UserActions_style1 }>
@@ -33,7 +39,7 @@ class UserActions extends Component{
                     <div style = { UserActions_style2 }>
                         <button className = "userButton userPublish">Publish</button>
                         <button className = "userButton userArchive">Archive</button>
-                        <button className = "userButton userDelete">Delete</button>
+                        <button className = "userButton userDelete" onClick = { this.props.deleteFeedAction }>Delete</button>
                         <div>{ this.props.selectedCount } selected(I will style it later)</div>
                     </div>
                 );

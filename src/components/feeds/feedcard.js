@@ -28,7 +28,12 @@ class FeedCard extends Component{
     selectFunction = () => {
     
      if(!this.state.isFeedSelected){ 
-      this.props.addingFeedTitleToArray(this.props.title);
+			var selectedFeedObject = {
+        id : this.props._id,
+				title : this.props.title,
+				category : this.props.category
+			}
+      this.props.addingFeedTitleToSelectedFeedsArray(selectedFeedObject);
       this.setState({
         isFeedSelected : !(this.state.isFeedSelected),
         feedImageCss : {
@@ -41,7 +46,11 @@ class FeedCard extends Component{
     }
 
     else{
-      this.props.removingFeedTitleFromArray(this.props.title);
+			var selectedFeedObject = {
+				title : this.props.title,
+				category : this.props.category
+			}
+      this.props.removingFeedTitleFromSelectedFeedsArray(selectedFeedObject);
       this.setState(
         {
           isFeedSelected : !(this.state.isFeedSelected),
