@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import "./App.css";
-import axios from 'axios';
 
 const UserActions_style1 = {
     position: "fixed",
@@ -24,7 +23,6 @@ class UserActions extends Component{
     }
 
     render(){
-        console.log(this);
         if(this.props.UserActionDisplay){
             return(
                 <div style = { UserActions_style1 }>

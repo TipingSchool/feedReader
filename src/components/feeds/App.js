@@ -12,6 +12,7 @@ class App extends Component{
       selectedFeedCount : 0
     }
     this.selectedFeeds = [];
+    this.selectedFeedsIndexArray = [];
   }
    
   componentWillMount(){
@@ -25,26 +26,27 @@ class App extends Component{
       });
   }
   
-  removingFeedTitleFromSelectedFeedsArray = (feedTitle) => {
-    this.selectedFeeds.splice(this.selectedFeeds.indexOf(feedTitle), 1);
+  removingFeedTitleFromSelectedFeedsArray = (feed, feedIndex) => {
+    this.selectedFeeds.splice(this.selectedFeeds.indexOf(feed), 1);
+    this.selectedFeedsIndexArray.splice(this.selectedFeedsIndexArray.indexOf(feedIndex), 1);
     this.setState(
       {
         selectedFeedCount : this.state.selectedFeedCount - 1
       }
-  );
-    console.log(this);
+    );
   }
 
-  addingFeedTitleToSelectedFeedsArray = (feed) => {
+  addingFeedTitleToSelectedFeedsArray = (feed, feedIndex) => {
     this.selectedFeeds.push(feed);
+    this.selectedFeedsIndexArray.push(feedIndex);
     this.setState(
-    {
-      selectedFeedCount : this.state.selectedFeedCount + 1
-    }
-  );
-    console.log(this);
+      {
+        selectedFeedCount : this.state.selectedFeedCount + 1
+      }
+    );
   }
 
+  
   deleteFeedAction = () => {
       var self = this;
       if(this.selectedFeeds.length > 0){
@@ -55,32 +57,30 @@ class App extends Component{
         console.log("delete post sent");
       });
       
-      // let currentFeedList = this.state.feeds;
-      // let newFeedList = [];
-      // let len = this.state.selectedFeedCount;
-      // for(let i = 0; i < len; i++){
-      //   // currentFeedList.splice(currentFeedList.indexOf(self.selectedFeeds[i].id), 1);
-      //   console.log(currentFeedList.indexOf(self.selectedFeeds[i].id));
-      // }
-      // newFeedList = currentFeedList;
-      // this.selectedFeeds = [];
-      // this.setState(
-      //   {
-      //     feeds : newFeedList
-      //   }
-      // );
+      let currentFeed = this.state.feeds;
+      this.selectedFeedsIndexArray.forEach(function(val, index){
+        currentFeed.splice(val, 1);
+      });
+      let newFeedList = currentFeed;
+      this.selectedFeeds = [];
+      this.selectedFeedsIndexArray = [];
+      this.setState({
+        feeds : newFeedList,
+        selectedFeedCount : this.selectedFeedsIndexArray.length
+      });
       
     }
   }
 
     render(){
+      console.log(this);
       var UserActionDisplay = !(this.state.selectedFeedCount) || false;
       return(
         <div className="App">
           <div className="stat"/>
           <UserActions UserActionDisplay = { UserActionDisplay } selectedCount = { this.state.selectedFeedCount } selectedFeed = { this.selectedFeeds } deleteFeedAction = { this.deleteFeedAction }/>
           <div className='flex-container'>
-              {this.state.feeds.map((value,i) =>(  <FeedCard key={i} {...value} addingFeedTitleToSelectedFeedsArray = { this.addingFeedTitleToSelectedFeedsArray } removingFeedTitleFromSelectedFeedsArray = { this.removingFeedTitleFromSelectedFeedsArray }/>))}   
+              {this.state.feeds.map((value,i) =>(  <FeedCard key={i} {...value} indexPosition = {i} addingFeedTitleToSelectedFeedsArray = { this.addingFeedTitleToSelectedFeedsArray } removingFeedTitleFromSelectedFeedsArray = { this.removingFeedTitleFromSelectedFeedsArray }/>))}   
           </div>  
         </div>
       );

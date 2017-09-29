@@ -28,12 +28,12 @@ class FeedCard extends Component{
     selectFunction = () => {
     
      if(!this.state.isFeedSelected){ 
-			var selectedFeedObject = {
+			let selectedFeedObject = {
         id : this.props._id,
 				title : this.props.title,
 				category : this.props.category
 			}
-      this.props.addingFeedTitleToSelectedFeedsArray(selectedFeedObject);
+      this.props.addingFeedTitleToSelectedFeedsArray(selectedFeedObject, this.props.indexPosition);
       this.setState({
         isFeedSelected : !(this.state.isFeedSelected),
         feedImageCss : {
@@ -46,11 +46,11 @@ class FeedCard extends Component{
     }
 
     else{
-			var selectedFeedObject = {
+			let selectedFeedObject = {
 				title : this.props.title,
 				category : this.props.category
 			}
-      this.props.removingFeedTitleFromSelectedFeedsArray(selectedFeedObject);
+      this.props.removingFeedTitleFromSelectedFeedsArray(selectedFeedObject, this.props.indexPosition);
       this.setState(
         {
           isFeedSelected : !(this.state.isFeedSelected),
@@ -67,9 +67,8 @@ class FeedCard extends Component{
 
     } 
 
-  render(){   
+  render(){  
     return(
-      
     <div>
         <div className = "feed-card-box" onClick={this.openModal}>
           <div className='img-card col-md-3'>
