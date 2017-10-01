@@ -12,7 +12,8 @@ class App extends Component{
 
   componentWillMount(){
      var self = this;
-     axios.get(`http://localhost:4000${self.props.match.url}`).then(function(response){
+     
+     axios.get(`http://localhost:4000/search${self.props.location.search}`).then(function(response){
        self.setState({feeds:response.data});
       }).catch(function (error){
         console.log(error);
@@ -21,6 +22,7 @@ class App extends Component{
   
 
     render(){
+      console.log(`http://localhost:4000/search${this.props.location.search}`)
      return(
       <div className="App">
         <div className="stat"/>
