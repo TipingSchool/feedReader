@@ -28,7 +28,7 @@ class App extends Component{
    
 
     handleSubmit = (event) =>{
-        var query = this.state.query.toLowerCase().replace(' ','+');
+        var query = this.state.query.toLowerCase().replace(/ /g,'+');
         // this.props.history.push(`/search?keywords=${this.state.query}`)
         if(event.key === 'Enter'){
             event.preventDefault();
