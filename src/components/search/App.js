@@ -9,31 +9,44 @@ class App extends Component{
     constructor(props){
           super(props);
           this.state={
-              query:'Search'
+              query:''
           }
 
     }
+    componentWillReceiveProps(){
+        if(this.props.location.pathname === "/search"){
+            this.setState({query:''})
+        }
+    }
+   
+
     
     UpdateSearch = (event) =>{
+           event.preventDefault()
            this.setState({query:event.target.value.substr(0,30)})
     }
+   
 
     handleSubmit = (event) =>{
+        var query = this.state.query.toLowerCase().replace(' ','+');
         // this.props.history.push(`/search?keywords=${this.state.query}`)
         if(event.key === 'Enter'){
-            this.props.history.push(`/search?keywords=${this.state.query}`)
+            event.preventDefault();
+            this.props.history.push(`/search?q=${query}`)
         }
     }
 
     handleClick = () =>{
-            this.props.history.push(`/search?keywords=${this.state.query}`)
+        var query = this.state.query.toLowerCase().replace(' ','+');
+            this.props.history.push(`/search?q=${query}`)
     } 
 
      render(){
+        
          return(
-             <form className='nav-span' >
+             <form className='nav-span' onSubmit={this.handleClick}>
                 <input type='text'
-                 value={this.state.search}
+                 value={this.state.query}
                  onChange={this.UpdateSearch}
                  onKeyPress={this.handleSubmit}
                   />

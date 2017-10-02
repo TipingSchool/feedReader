@@ -71,11 +71,10 @@ class FeedCard extends Component{
       );
     }
 
+  }
 
-    } 
-
-  render(){
-      
+  render(){ 
+  
     return(
     <div>
         <div className = "feed-card-box" onClick={this.openModal}>

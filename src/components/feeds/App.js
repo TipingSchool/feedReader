@@ -17,8 +17,7 @@ class App extends Component{
    
   componentWillMount(){
      var self = this;
-     axios.get(`http://localhost:4000${self.props.match.url}`)
-      .then(function(response){
+     axios.get(`http://localhost:4000${ self.props.location.pathname + self.props.location.search}`).then(function(response){
        self.setState({feeds:response.data});
       })
       .catch(function (error){
