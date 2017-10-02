@@ -36,7 +36,7 @@ class UserActions extends Component{
                 return(
                     <div style = { UserActions_style2 }>
                         <button className = "userButton userPublish">Publish</button>
-                        <button className = "userButton userArchive">Archive</button>
+                        <button className = "userButton userArchive" onClick = { this.props.archiveFeedAction }>Archive</button>
                         <button className = "userButton userDelete" onClick = { this.props.deleteFeedAction }>Delete</button>
                         <div>{ this.props.selectedCount } selected(I will style it later)</div>
                     </div>

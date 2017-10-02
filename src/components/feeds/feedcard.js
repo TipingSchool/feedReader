@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import FaTrashO from 'react-icons/lib/fa/trash-o';
+import FaBookmarkO from 'react-icons/lib/fa/bookmark-o';
+import FaCloudUpload from 'react-icons/lib/fa/cloud-upload';
 import './App.css';
 import Modal from './modal/modal';
-import node1 from '../Categories/node1.png'
+import node1 from '../Categories/node1.png';
 
 
 
@@ -15,11 +18,14 @@ class FeedCard extends Component{
           height : "130px",
           opacity : "1",
         },
-        isFeedSelected : false
+        isFeedSelected : false,
+        isFeedCardImageHighlighted : this.props.isFeedCardImageHighlighted
       }; 
     
     }
     
+
+
     openModal = () => {
       this.setState({isModalOpen:!(this.state.isModalOpen)});
     }
@@ -47,6 +53,7 @@ class FeedCard extends Component{
 
     else{
 			let selectedFeedObject = {
+        id : this.props._id,
 				title : this.props.title,
 				category : this.props.category
 			}
@@ -67,7 +74,8 @@ class FeedCard extends Component{
 
     } 
 
-  render(){  
+  render(){
+      
     return(
     <div>
         <div className = "feed-card-box" onClick={this.openModal}>
@@ -83,15 +91,18 @@ class FeedCard extends Component{
             <div className='description'>
               { this.props.description.substring(0,150) + '...' }
             </div>
-            <div >
-           
-            <Modal isOpen={this.state.isModalOpen} onClose={this.openModal}  child={this.props}/>
+            <div>
+              <Modal isOpen={this.state.isModalOpen} onClose={this.openModal}  child={this.props}/>
             </div>
           </div>
+
         </div>
-      <div className = "selectButtonDiv">
-        <button className = "userSelectButton" onClick = { this.selectFunction }>+</button>
-      </div>
+        <div className = "actionButtonsDiv">
+            <FaTrashO className = "deleteIcon"/>
+            <FaBookmarkO className = "bookmarkIcon"/>
+            <FaCloudUpload className = "publishIcon"/>
+
+        </div>
     </div>
     );
   }

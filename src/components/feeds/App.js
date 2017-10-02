@@ -41,7 +41,7 @@ class App extends Component{
     this.selectedFeedsIndexArray.push(feedIndex);
     this.setState(
       {
-        selectedFeedCount : this.state.selectedFeedCount + 1
+        selectedFeedCount : this.selectedFeeds.length
       }
     );
   }
@@ -51,24 +51,44 @@ class App extends Component{
       var self = this;
       if(this.selectedFeeds.length > 0){
         axios.post(`http://localhost:4000${self.props.match.url}`,{
-            data : self.selectedFeeds
+            data : self.selectedFeeds,
+            action : "delete"
         }
       ).then(function(response){
         console.log("delete post sent");
       });
       
       let currentFeed = this.state.feeds;
-      this.selectedFeedsIndexArray.forEach(function(val, index){
-        currentFeed.splice(val, 1);
-      });
-      let newFeedList = currentFeed;
-      this.selectedFeeds = [];
-      this.selectedFeedsIndexArray = [];
+      let len = this.selectedFeedsIndexArray.length;
+      for(var i = 0; i < len; i++){
+        currentFeed.splice(this.selectedFeedsIndexArray[i], 1);
+      }
       this.setState({
-        feeds : newFeedList,
+        feeds : currentFeed,
         selectedFeedCount : this.selectedFeedsIndexArray.length
       });
+    }
+  }
+
+  archiveFeedAction = () => {
+    var self = this;
+    if(this.selectedFeeds.length > 0){
+      axios.post(`http://localhost:4000${self.props.match.url}`,{
+        data : self.selectedFeeds,
+        action : "archive"
+      }).then(function(response){
+        console.log("post archived");
+      });
       
+      let currentFeed = this.state.feeds;
+      let len = this.selectedFeedsIndexArray.length;
+      for(var i = 0; i < len; i++){
+        currentFeed.splice(this.selectedFeedsIndexArray[i], 1);
+      }
+      this.setState({
+        feeds : currentFeed,
+        selectedFeedCount : this.selectedFeedsIndexArray.length
+      });
     }
   }
 
@@ -78,7 +98,7 @@ class App extends Component{
       return(
         <div className="App">
           <div className="stat"/>
-          <UserActions UserActionDisplay = { UserActionDisplay } selectedCount = { this.state.selectedFeedCount } selectedFeed = { this.selectedFeeds } deleteFeedAction = { this.deleteFeedAction }/>
+          <UserActions UserActionDisplay = { UserActionDisplay } selectedCount = { this.state.selectedFeedCount } selectedFeed = { this.selectedFeeds } deleteFeedAction = { this.deleteFeedAction } archiveFeedAction = { this.archiveFeedAction }/>
           <div className='flex-container'>
               {this.state.feeds.map((value,i) =>(  <FeedCard key={i} {...value} indexPosition = {i} addingFeedTitleToSelectedFeedsArray = { this.addingFeedTitleToSelectedFeedsArray } removingFeedTitleFromSelectedFeedsArray = { this.removingFeedTitleFromSelectedFeedsArray }/>))}   
           </div>  

@@ -18,15 +18,17 @@
     display: inline-block;
     font-weight: 400;
     width:600px;
+    max-width: 600px;
     background-color: white;
     /* border: 1px solid black; */
     height: 130px;
-    margin: 20px;
+    margin: 20px 0 20px 20px;
     box-sizing: border-box;
-    box-shadow: 4px 5px 6px #444343;
+    box-shadow: 1px 3px 2px -1px #676B64;
     font-size: 30px;
     font-family: sans-serif;
     cursor: pointer;
+    border-radius : 7px;
 }
 
 
@@ -87,7 +89,7 @@ date{
 
 /* User action button CSS */
 
-.userButton{
+/* .userButton{
     border: none;
     color: white;
     padding: 10px 15px;
@@ -107,7 +109,7 @@ date{
     background-color: #2A752C;
 }
 
-.userDelete{
+.feedDelete{
     background-color : #F44336;
 }
 .userDelete:hover{
@@ -118,29 +120,44 @@ date{
 }
 .userArchive:hover{
     background-color: #0D5A72;
+} */
+
+.actionButtonsDiv{
+    width: 20px;
+    height: 84px;
+    border: 1px solid #C9BBBB;
+    float: right;
+    margin: 43px -20px 0 0;
+    background-color: #FFF;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    position: relative;
 }
 
-.selectButtonDiv{
-    display: inline-block;
-    padding-bottom: 140px;
-    margin-left: -25px;
+.deleteIcon{
+    box-sizing: border-box;
+    width: 20px;
+    height: 27px;
+    margin-bottom: 0px;
+    padding : 5px 0;
+    border-bottom: 0.5px solid #BEB8B8;
 }
-.userSelectButton{
-    color: #FFF;
-    background-color: #037FE5;
-    cursor : pointer;
-    border : none;
-    font-weight: 600;
-    font-size : 15px;
-    border-radius: 10px;
-    float : right;
-    text-decoration: none;
+
+.bookmarkIcon{
+    box-sizing : border-box;
+    width: 20px;
+    height: 27px;
+    margin-bottom : 0px;
+    padding: 5px 0;
+    border-bottom : 0.5px solid #BEB8B8;
 }
-.userSelectButton:active{
-    background-color: #00F;
-}
-.userSelectButton:focus{
-   outline: none;
+
+.publishIcon{
+    box-sizing : border-box;
+    width: 20px;
+    height: 27px;
+    margin-bottom : 0px;
+    padding : 5px 0;
 }
 
 @media(min-width:768px){
