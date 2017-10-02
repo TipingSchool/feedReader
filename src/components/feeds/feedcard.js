@@ -31,7 +31,7 @@ class FeedCard extends Component{
     }
 
     publishFeedFunctionLocal = () => {
-      this.props.archiveFeedAction(this.props.indexNumber, this.props._id);
+      this.props.publishFeedAction(this.props.indexNumber, this.props._id);
       console.log(this);
     }
 
