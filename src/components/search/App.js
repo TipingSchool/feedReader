@@ -13,8 +13,16 @@ class App extends Component{
           }
 
     }
+    componentWillReceiveProps(){
+        if(this.props.location.pathname === "/search"){
+            this.setState({query:''})
+        }
+    }
+   
+
     
     UpdateSearch = (event) =>{
+           event.preventDefault()
            this.setState({query:event.target.value.substr(0,30)})
     }
    
@@ -34,6 +42,7 @@ class App extends Component{
     } 
 
      render(){
+        
          return(
              <form className='nav-span' onSubmit={this.handleClick}>
                 <input type='text'
@@ -41,7 +50,7 @@ class App extends Component{
                  onChange={this.UpdateSearch}
                  onKeyPress={this.handleSubmit}
                   />
-                <Link to={`/search?q=${this.state.query}`}><FaSearch className='search-icon'  /></Link>
+                <FaSearch className='search-icon' onClick={this.handleClick} />
              </form>
          )
      }
