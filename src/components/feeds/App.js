@@ -14,7 +14,20 @@ class App extends Component{
     this.selectedFeeds = [];
     this.selectedFeedsIndexArray = [];
   }
-   
+
+  componentWillReceiveProps(nextProp){
+    var currentLocation = this.props.location.pathname + this.props.location.search
+    var nextLocation = nextProp.location.pathname  + nextProp.location.search
+    if(currentLocation !== nextLocation){
+      var self = this;
+      axios.get(`http://localhost:4000${nextLocation}`).then(function(response){
+        self.setState({feeds:response.data});
+       }).catch(function (error){
+         console.log(error);
+       });
+    }
+}
+
   componentWillMount(){
      var self = this;
      axios.get(`http://localhost:4000${ self.props.location.pathname + self.props.location.search}`).then(function(response){
