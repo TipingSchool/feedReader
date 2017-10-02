@@ -17,6 +17,7 @@ class FeedCard extends Component{
           width : "100%",
           height : "130px",
           opacity : "1",
+          borderRadius:"7px"
         },
         isFeedSelected : false,
         isFeedCardImageHighlighted : this.props.isFeedCardImageHighlighted
@@ -46,7 +47,8 @@ class FeedCard extends Component{
           width : "100%",
           height : "130px",
           opacity : "0.5",
-          zIndex : "1"
+          zIndex : "1",
+          borderRadius:"7px"
         }
       });
     }
@@ -65,7 +67,8 @@ class FeedCard extends Component{
             width : "100%",
             height : "130px",
             opacity : "1",
-            zIndex : "1"
+            zIndex : "1",
+            borderRadius:"7px"
           }
         }
       );

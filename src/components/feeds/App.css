@@ -36,9 +36,11 @@
     height: 130px;
     width:100px;
     float: left;
+    border-radius : 7px;
 }
 .feed-card-img{
     width:100%;
+    border-radius : 7px;
     /* margin: 10px; */
     height: 130px;
     opacity: 0.5;
