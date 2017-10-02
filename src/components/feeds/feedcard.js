@@ -12,77 +12,36 @@ class FeedCard extends Component{
   constructor(props){
     super(props);
       this.state = {
-        isModalOpen: false,
-        feedImageCss : {
-          width : "100%",
-          height : "130px",
-          opacity : "1",
-          borderRadius:"7px"
-        },
-        isFeedSelected : false,
-        isFeedCardImageHighlighted : this.props.isFeedCardImageHighlighted
+        isModalOpen: false
       }; 
-    
     }
     
-
-
     openModal = () => {
       this.setState({isModalOpen:!(this.state.isModalOpen)});
     }
     
-
-    selectFunction = () => {
-    
-     if(!this.state.isFeedSelected){ 
-			let selectedFeedObject = {
-        id : this.props._id,
-				title : this.props.title,
-				category : this.props.category
-			}
-      this.props.addingFeedTitleToSelectedFeedsArray(selectedFeedObject, this.props.indexPosition);
-      this.setState({
-        isFeedSelected : !(this.state.isFeedSelected),
-        feedImageCss : {
-          width : "100%",
-          height : "130px",
-          opacity : "0.5",
-          zIndex : "1",
-          borderRadius:"7px"
-        }
-      });
+    deleteFeedFunctionLocal = () => {
+      this.props.deleteFeedAction(this.props.indexNumber, this.props._id);
+      console.log(this);
     }
 
-    else{
-			let selectedFeedObject = {
-        id : this.props._id,
-				title : this.props.title,
-				category : this.props.category
-			}
-      this.props.removingFeedTitleFromSelectedFeedsArray(selectedFeedObject, this.props.indexPosition);
-      this.setState(
-        {
-          isFeedSelected : !(this.state.isFeedSelected),
-          feedImageCss : {
-            width : "100%",
-            height : "130px",
-            opacity : "1",
-            zIndex : "1",
-            borderRadius:"7px"
-          }
-        }
-      );
+    archiveFeedFunctionLocal = () => {
+      this.props.archiveFeedAction(this.props.indexNumber, this.props._id);
+      console.log(this);
     }
 
-  }
+    publishFeedFunctionLocal = () => {
+      this.props.archiveFeedAction(this.props.indexNumber, this.props._id);
+      console.log(this);
+    }
 
-  render(){ 
-  
+  render(){
+      
     return(
     <div>
         <div className = "feed-card-box" onClick={this.openModal}>
           <div className='img-card col-md-3'>
-            <img style = { this.state.feedImageCss } src={ node1 } alt='try'/>
+            <img className = "feed-card-img" src={ node1 } alt='try'/>
           </div>
           <div className='description-box col-md-9'>
             <p className='heading'> {this.props.title }</p>
@@ -100,10 +59,9 @@ class FeedCard extends Component{
 
         </div>
         <div className = "actionButtonsDiv">
-            <FaTrashO className = "deleteIcon"/>
-            <FaBookmarkO className = "bookmarkIcon"/>
-            <FaCloudUpload className = "publishIcon"/>
-
+            <FaTrashO className = "deleteIcon" onClick = { this.deleteFeedFunctionLocal } />
+            <FaBookmarkO className = "archiveIcon" onClick = { this.archiveFeedFunctionLocal } />
+            <FaCloudUpload className = "publishIcon" onClick = { this.publishFeedFunctionLocal } />
         </div>
     </div>
     );

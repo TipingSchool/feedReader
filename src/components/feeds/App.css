@@ -1,10 +1,27 @@
+@font-face {
+    font-family:  'Basic';
+    src: url(../fonts/Basic-Regular.ttf);
+}
+
+@font-face {
+    font-family : 'PT_Sans-Web-Regular';
+    src : url(../fonts/PT_Sans-Web-Regular.ttf);
+}
+
+@font-face {
+    font-family : 'Nunito-Regular';
+    src : url(../fonts/Nunito-Regular.ttf);
+}
+
+@font-face {
+    font-family : 'TitilliumWeb-Regular';
+    src : url(../fonts/TitilliumWeb-Regular.ttf);
+}
 
 .stat{
     height: 20px;
 }
   
-
-
 
 .flex-container{
     display:inline-flex;
@@ -17,10 +34,8 @@
 .feed-card-box{
     display: inline-block;
     font-weight: 400;
-    width:600px;
-    max-width: 600px;
+    width:700px;
     background-color: white;
-    /* border: 1px solid black; */
     height: 130px;
     margin: 20px 0 20px 20px;
     box-sizing: border-box;
@@ -40,11 +55,8 @@
 }
 .feed-card-img{
     width:100%;
-    border-radius : 7px;
-    /* margin: 10px; */
     height: 130px;
-    opacity: 0.5;
-    /* border: 1px solid; */
+    opacity: 1;
 }
 
 .description-box{
@@ -58,10 +70,10 @@
     padding-bottom: 2px;
     text-align: left;
     font-size: 14px;
-    color: #A3A3A3;
-   
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    color: #868585;
+    font-family: 'TitilliumWeb-Regular', sans-serif;
 }
+
 
 
 .heading{
@@ -69,64 +81,29 @@
     margin: 5px 10px;
     font-size: 18px;
     color: #20163B;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    font-weight: 300;
+    letter-spacing: 0.8px;
+    font-family: 'Basic', sans-serif;
 }
 
+author, date{
+    margin: 0 10px;
+    font-family: 'Nunito-Regular', sans-serif;
+    color: #6D6965;
+    font-size: 14px;
+}
 author{
-    margin: 0 10px;
-    color: #7A4609;
     float: left;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 14px;
 }
-
 date{
-    margin: 0 10px;
-    color: #7A4609;
     float: right;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 14px;
 }
-
 
 /* User action button CSS */
 
-/* .userButton{
-    border: none;
-    color: white;
-    padding: 10px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-
-.userPublish{
-    background-color: #4CAF50;
-}
-
-.userPublish:hover{
-    background-color: #2A752C;
-}
-
-.feedDelete{
-    background-color : #F44336;
-}
-.userDelete:hover{
-    background-color : #992E2E;
-}
-.userArchive{
-    background-color: #008CBA;
-}
-.userArchive:hover{
-    background-color: #0D5A72;
-} */
-
 .actionButtonsDiv{
     width: 20px;
-    height: 84px;
+    height: 82px;
     border: 1px solid #C9BBBB;
     float: right;
     margin: 43px -20px 0 0;
@@ -134,6 +111,7 @@ date{
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     position: relative;
+    box-shadow: 1px 2px 1px -1px #676B64;
 }
 
 .deleteIcon{
@@ -143,16 +121,32 @@ date{
     margin-bottom: 0px;
     padding : 5px 0;
     border-bottom: 0.5px solid #BEB8B8;
+    cursor : pointer;
+}
+.deleteIcon:hover{
+    background-color: #F7F4F4;
+}
+.deleteIcon:active{
+    background-color: #B2BBB5;
 }
 
-.bookmarkIcon{
+
+.archiveIcon{
     box-sizing : border-box;
     width: 20px;
     height: 27px;
     margin-bottom : 0px;
     padding: 5px 0;
     border-bottom : 0.5px solid #BEB8B8;
+    cursor : pointer;
 }
+.archiveIcon:hover{
+    background-color: #F7F4F4;
+}
+.archiveIcon:active{
+    background-color: #B2BBB5;
+}
+
 
 .publishIcon{
     box-sizing : border-box;
@@ -160,6 +154,13 @@ date{
     height: 27px;
     margin-bottom : 0px;
     padding : 5px 0;
+    cursor : pointer;
+}
+.publishIcon:hover{
+    background-color: #F7F4F4;
+}
+.publishIcon:active{
+    background-color: #B2BBB5;
 }
 
 @media(min-width:768px){
