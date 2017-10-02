@@ -8,11 +8,8 @@ class App extends Component{
   constructor(props){
     super(props);
     this.state = {
-      feeds:[],
-      selectedFeedCount : 0
+      feeds:[]
     }
-    this.selectedFeeds = [];
-    this.selectedFeedsIndexArray = [];
   }
    
   componentWillMount(){
@@ -47,66 +44,65 @@ class App extends Component{
   }
 
   
-  deleteFeedAction = () => {
+  deleteFeedAction = (feedIndexNumber, feedObjectId) => {
       var self = this;
-      if(this.selectedFeeds.length > 0){
         axios.post(`http://localhost:4000${self.props.match.url}`,{
-            data : self.selectedFeeds,
+            feedObjectId :  feedObjectId,
             action : "delete"
         }
       ).then(function(response){
         console.log("delete post sent");
       });
-      
+
       let currentFeed = this.state.feeds;
-      let len = this.selectedFeedsIndexArray.length;
-      for(var i = 0; i < len; i++){
-        currentFeed.splice(this.selectedFeedsIndexArray[i], 1);
-      }
+      currentFeed.splice(feedIndexNumber, 1);
       this.setState({
-        feeds : currentFeed,
-        selectedFeedCount : this.selectedFeedsIndexArray.length
+        feeds : currentFeed
       });
-    }
   }
 
-  archiveFeedAction = () => {
+  archiveFeedAction = (feedIndexNumber, feedObjectId) => {
     var self = this;
-    if(this.selectedFeeds.length > 0){
-      axios.post(`http://localhost:4000${self.props.match.url}`,{
-        data : self.selectedFeeds,
-        action : "archive"
-      }).then(function(response){
-        console.log("post archived");
-      });
-      
-      let currentFeed = this.state.feeds;
-      let len = this.selectedFeedsIndexArray.length;
-      for(var i = 0; i < len; i++){
-        currentFeed.splice(this.selectedFeedsIndexArray[i], 1);
-      }
-      this.setState({
-        feeds : currentFeed,
-        selectedFeedCount : this.selectedFeedsIndexArray.length
-      });
-    }
+    axios.post(`http://localhost:4000${self.props.match.url}`,{
+      feedObjectId : feedObjectId,
+      action : "archive"
+    }).then(function(response){
+      console.log("post archived");
+    });
+
+    let currentFeed = this.state.feeds;
+    currentFeed.splice(feedIndexNumber, 1);
+    this.setState({
+      feeds : currentFeed
+    });
+  }
+
+  publishFeedAction = (feedIndexNumber, feedObjectId) => {
+    var self = this;
+    axios.post(`http://localhost:4000${self.props.match.url}`,{
+      feedObjectId : feedObjectId,
+      action : "publish"
+    }).then(function(response){
+      console.log("post published");
+    });
+
+    let currentFeed = this.state.feeds;
+    currentFeed.splice(feedIndexNumber, 1);
+    this.setState({
+      feeds : currentFeed
+    });
   }
 
     render(){
-      console.log(this);
-      var UserActionDisplay = !(this.state.selectedFeedCount) || false;
       return(
         <div className="App">
           <div className="stat"/>
-          <UserActions UserActionDisplay = { UserActionDisplay } selectedCount = { this.state.selectedFeedCount } selectedFeed = { this.selectedFeeds } deleteFeedAction = { this.deleteFeedAction } archiveFeedAction = { this.archiveFeedAction }/>
           <div className='flex-container'>
-              {this.state.feeds.map((value,i) =>(  <FeedCard key={i} {...value} indexPosition = {i} addingFeedTitleToSelectedFeedsArray = { this.addingFeedTitleToSelectedFeedsArray } removingFeedTitleFromSelectedFeedsArray = { this.removingFeedTitleFromSelectedFeedsArray }/>))}   
+              {this.state.feeds.map((value,i) =>(  <FeedCard key={i} {...value} indexNumber = {i} deleteFeedAction = { this.deleteFeedAction } archiveFeedAction = { this.archiveFeedAction } publishFeedAction = { this.publishFeedAction }/>))}   
           </div>  
         </div>
       );
     }
-  
 }
-
-
+  
 export default App;
