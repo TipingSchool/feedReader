@@ -37,7 +37,7 @@ class App extends Component{
     }
 
     handleClick = () =>{
-        var query = this.state.query.toLowerCase().replace(' ','+');
+        var query = this.state.query.toLowerCase().replace(/ /g,'+');
             this.props.history.push(`/search?q=${query}`)
     } 
 
