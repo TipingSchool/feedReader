@@ -13,8 +13,8 @@ class App extends Component{
           }
 
     }
-    componentWillReceiveProps(){
-        if(this.props.location.pathname === "/search"){
+    componentWillReceiveProps(nextProp){
+        if(nextProp.location.pathname !== "/search"){
             this.setState({query:''})
         }
     }
@@ -37,7 +37,7 @@ class App extends Component{
     }
 
     handleClick = () =>{
-        var query = this.state.query.toLowerCase().replace(' ','+');
+        var query = this.state.query.toLowerCase().replace(/ /g,'+');
             this.props.history.push(`/search?q=${query}`)
     } 
 
