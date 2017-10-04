@@ -9,7 +9,7 @@ const App = () =>(
             <Route exact path='/feeds/:name' component={Feeds}/>
             <Route exact path='/feeds' component={Feeds}/>
             <Route exact path='/' component={Categories}/>
-            <Route  path='/search' component={Feeds}/>
+            <Route exact path='/search' component={Feeds}/>
         </Switch>
        
     </div>

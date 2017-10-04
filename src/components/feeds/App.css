@@ -102,6 +102,24 @@ date{
 
 /* User action button CSS */
 
+.userActionContainer{
+    float : right;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+
+.userActionHighlighterDiv{
+    margin : 50px 0 0 0;
+}
+
+.hoverDiv{
+    visibility: hidden;
+    display: inline-block;
+    padding :4px 0 4px 30px;
+    font-size : 14px;
+}
+
 .actionButtonsDiv{
     width: 20px;
     height: 82px;
@@ -163,6 +181,7 @@ date{
 .publishIcon:active{
     background-color: #B2BBB5;
 }
+
 
 @media(min-width:768px){
     .col-md-3{

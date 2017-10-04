@@ -39,30 +39,38 @@ class FeedCard extends Component{
       
     return(
     <div>
-        <div className = "feed-card-box" onClick={this.openModal}>
-          <div className='img-card col-md-3'>
-            <img className = "feed-card-img" src={ node1 } alt='try'/>
-          </div>
-          <div className='description-box col-md-9'>
-            <p className='heading'> {this.props.title }</p>
-            <div>
-              <author> {this.props.creator.substring(0,20) }</author>
-              <date>{ new Date(this.props.date).toDateString() }</date>
+          <div className = "feed-card-box" onClick={this.openModal}>
+              <div className='img-card col-md-3'>
+                  <img className = "feed-card-img" src={ node1 } alt='try'/>
+              </div>
+            <div className='description-box col-md-9'>
+                <p className='heading'> {this.props.title }</p>
+                <div>
+                    <author> {this.props.creator.substring(0,20) }</author>
+                    <date>{ new Date(this.props.date).toDateString() }</date>
+                </div>
+              <div className='description'>
+                  { this.props.description.substring(0,150) + '...' }
+              </div>
+              <div>
+                  <Modal isOpen={this.state.isModalOpen} onClose={this.openModal}  child={this.props}/>
+              </div>
             </div>
-            <div className='description'>
-              { this.props.description.substring(0,150) + '...' }
-            </div>
-            <div>
-              <Modal isOpen={this.state.isModalOpen} onClose={this.openModal}  child={this.props}/>
-            </div>
+
           </div>
 
-        </div>
-        <div className = "actionButtonsDiv">
-            <FaTrashO className = "deleteIcon" onClick = { this.deleteFeedFunctionLocal } />
-            <FaBookmarkO className = "archiveIcon" onClick = { this.archiveFeedFunctionLocal } />
-            <FaCloudUpload className = "publishIcon" onClick = { this.publishFeedFunctionLocal } />
-        </div>
+          <div className = "userActionContainer">
+              <div className = "userActionHighlighterDiv">
+                  <span id = "deleteHighlight" className = "hoverDiv">Delete</span><br/>
+                  <span id = "archiveHighlight" className = "hoverDiv">Archive</span><br/>
+                  <span id = "publishHighlight" className = "hoverDiv">Publish</span>
+              </div>
+              <div className = "actionButtonsDiv">
+                  <FaTrashO className = "deleteIcon" onClick = { this.deleteFeedFunctionLocal } />
+                  <FaBookmarkO className = "archiveIcon" onClick = { this.archiveFeedFunctionLocal } />
+                  <FaCloudUpload className = "publishIcon" onClick = { this.publishFeedFunctionLocal } />
+              </div>
+          </div>
     </div>
     );
   }
