@@ -59,18 +59,17 @@ class FeedCard extends Component{
 
           </div>
 
-          <div className = "userActionContainer">
-              <div className = "userActionHighlighterDiv">
-                  <span id = "deleteHighlight" className = "hoverDiv">Delete</span><br/>
-                  <span id = "archiveHighlight" className = "hoverDiv">Archive</span><br/>
-                  <span id = "publishHighlight" className = "hoverDiv">Publish</span>
-              </div>
+          
+
               <div className = "actionButtonsDiv">
                   <FaTrashO className = "deleteIcon" onClick = { this.deleteFeedFunctionLocal } />
+                  <span className = "deleteHighlight">Delete</span><br/>
                   <FaBookmarkO className = "archiveIcon" onClick = { this.archiveFeedFunctionLocal } />
+                  <span className = "archiveHighlight">Archive</span><br/>
                   <FaCloudUpload className = "publishIcon" onClick = { this.publishFeedFunctionLocal } />
+                  <span className = "publishHighlight">Publish</span> 
               </div>
-          </div>
+          
     </div>
     );
   }

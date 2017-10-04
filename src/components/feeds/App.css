@@ -102,40 +102,11 @@ date{
 
 /* User action button CSS */
 
-.userActionContainer{
+/* .userActionContainer{
     float : right;
     display: flex;
     flex-direction: row-reverse;
 }
-
-
-.userActionHighlighterDiv{
-    margin : 50px 0 0 0;
-    padding: 0 0 0 25px;
-}
-
-.hoverDiv{
-    display: inline-block;
-    border-radius : 5px;
-    padding :4px 2px 4px 2px;
-    font-size : 14px;
-}
-
-#deleteHighlight{
-    color : white;
-    background-color: #D60C0C;
-}
-
-#archiveHighlight{
-    color : white;
-    background-color: #5D5DBD;
-}
-
-#publishHighlight{
-    color : white;
-    background-color: #259625;
-}
-
 .actionButtonsDiv{
     width: 20px;
     height: 82px;
@@ -196,6 +167,18 @@ date{
 }
 .publishIcon:active{
     background-color: #B2BBB5;
+} */
+
+.actionButtonDiv{
+    border: 1px solid black;
+    width: 75px;
+    position: relative;
+    top: 56px;
+    float: right;
+}
+
+.deleteIcon, .archiveIcon, .publishIcon{
+    display: inline-block;
 }
 
 
