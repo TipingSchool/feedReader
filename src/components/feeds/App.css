@@ -18,6 +18,11 @@
     src : url(../fonts/TitilliumWeb-Regular.ttf);
 }
 
+@font-face {
+    font-family: 'Roboto';
+    src : url(../fonts/Roboto-Regular.ttf);
+}
+
 .stat{
     height: 20px;
 }
@@ -129,12 +134,7 @@ date{
     border-bottom: 0.5px solid #BEB8B8;
     cursor : pointer;
 }
-.deleteIcon:hover{
-    background-color: #F7F4F4;
-}
-.deleteIcon:active{
-    background-color: #B2BBB5;
-}
+
 
 
 .archiveIcon{
@@ -146,12 +146,7 @@ date{
     border-bottom : 0.5px solid #BEB8B8;
     cursor : pointer;
 }
-.archiveIcon:hover{
-    background-color: #F7F4F4;
-}
-.archiveIcon:active{
-    background-color: #B2BBB5;
-}
+
 
 
 .publishIcon{
@@ -162,25 +157,92 @@ date{
     padding : 5px 0;
     cursor : pointer;
 }
-.publishIcon:hover{
-    background-color: #F7F4F4;
-}
-.publishIcon:active{
-    background-color: #B2BBB5;
-} */
+*/
 
-.actionButtonDiv{
-    border: 1px solid black;
+.actionButtonsDiv{
+    /* border: 1px solid black; */
     width: 75px;
     position: relative;
-    top: 56px;
+    top: 46px;
     float: right;
 }
 
 .deleteIcon, .archiveIcon, .publishIcon{
+    padding : 4px 1px ;
     display: inline-block;
+    background-color: #FFF;
 }
 
+
+.hoverText{
+    border-radius : 5px;
+    padding :4px;
+    font-size : 14px;
+    color : white;
+    font-family: "Roboto", sans-serif;
+}
+
+.hoverText#deleteHighlight{
+    visibility: hidden;
+    background-color: #D60C0C;
+}
+.hoverText#archiveHighlight{
+    visibility: hidden;
+    background-color: #5D5DBD;
+}
+.hoverText#publishHighlight{
+    visibility: hidden;
+    background-color: #259625;
+}
+
+
+
+.deleteIcon{
+    border-top-right-radius: 5px;
+    border: 1px solid #C9BBBB;
+}
+.deleteIcon:hover{
+    background-color: #F7F4F4;
+}
+.deleteIcon:hover + .hoverText#deleteHighlight{
+    visibility: visible;
+    background-color: #D60C0C;
+}
+.deleteIcon:active{
+    background-color: #B2BBB5;
+}
+
+
+.archiveIcon{
+    border: 0.5px solid #C9BBBB;
+}
+.archiveIcon:hover{
+    background-color: #F7F4F4;
+}
+
+.archiveIcon:hover + .hoverText#archiveHighlight{
+    visibility: visible;
+    background-color: #5D5DBD;
+}
+.archiveIcon:active{
+    background-color: #B2BBB5;
+}
+
+
+.publishIcon{
+    border: 0.5px solid #C9BBBB;
+    border-bottom-right-radius: 5px;
+}
+.publishIcon:hover{
+    background-color: #F7F4F4;
+}
+.publishIcon:hover + .hoverText#publishHighlight{
+    visibility: visible;
+    background-color: #259625;
+}
+.publishIcon:active{
+    background-color: #B2BBB5;
+}
 
 @media(min-width:768px){
     .col-md-3{
