@@ -107,58 +107,6 @@ date{
 
 /* User action button CSS */
 
-/* .userActionContainer{
-    float : right;
-    display: flex;
-    flex-direction: row-reverse;
-}
-.actionButtonsDiv{
-    width: 20px;
-    height: 82px;
-    border: 1px solid #C9BBBB;
-    float: right;
-    margin: 43px -20px 0 0;
-    background-color: #FFF;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    position: relative;
-    box-shadow: 1px 2px 1px -1px #676B64;
-}
-
-.deleteIcon{
-    box-sizing: border-box;
-    width: 20px;
-    height: 27px;
-    margin-bottom: 0px;
-    padding : 5px 0;
-    border-bottom: 0.5px solid #BEB8B8;
-    cursor : pointer;
-}
-
-
-
-.archiveIcon{
-    box-sizing : border-box;
-    width: 20px;
-    height: 27px;
-    margin-bottom : 0px;
-    padding: 5px 0;
-    border-bottom : 0.5px solid #BEB8B8;
-    cursor : pointer;
-}
-
-
-
-.publishIcon{
-    box-sizing : border-box;
-    width: 20px;
-    height: 27px;
-    margin-bottom : 0px;
-    padding : 5px 0;
-    cursor : pointer;
-}
-*/
-
 .actionButtonsDiv{
     /* border: 1px solid black; */
     width: 75px;
