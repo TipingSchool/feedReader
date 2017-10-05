@@ -147,7 +147,7 @@ date{
 
 .deleteIcon{
     border-top-right-radius: 5px;
-    border: 1px solid #C9BBBB;
+    border: 0.5px solid #C9BBBB;
 }
 .deleteIcon:hover{
     background-color: #F7F4F4;
@@ -180,7 +180,7 @@ date{
 .publishIcon{
     border: 0.5px solid #C9BBBB;
     border-bottom-right-radius: 5px;
-    box-shadow: 0 1px 1px 0px #676B64;
+    box-shadow: 0 1px 0px 0px #676B64;
 }
 .publishIcon:hover{
     background-color: #F7F4F4;
