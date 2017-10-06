@@ -88,8 +88,13 @@ class App extends Component{
       return(
         <div className="App">
           <div className="stat"/>
-          <div className='flex-container'>
+          <div className='grid-container'>
+          <div className='filters'>
+          
+          </div>
+          <div>
               {this.state.feeds.map((value,i) =>(  <FeedCard key={i} {...value} indexNumber = {i} deleteFeedAction = { this.deleteFeedAction } archiveFeedAction = { this.archiveFeedAction } publishFeedAction = { this.publishFeedAction }/>))}   
+          </div>
           </div>  
         </div>
       );
