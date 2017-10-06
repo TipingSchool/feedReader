@@ -1,25 +1,31 @@
 
 .stat{
-    height: 20px;
+    height: 60px;
 }
   
 
 
 
-.flex-container{
-    display:inline-flex;
-    margin: 30px 100px;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    direction: column;
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-column-gap: 50px;
 }
 
+.filters{
+    padding: 10px;
+    border:  1px solid black;
+    position:sticky;
+    top: 100px;
+    height: 70vh;
+    margin-left: 10px;
+}
 .feed-card-box{
     display: inline-block;
     font-weight: 400;
     width:700px;
-    background-color: white;
     height: 130px;
+    background-color: white;
     margin: 10px 0 10px 10px;
     box-sizing: border-box;
     box-shadow: 1px 3px 2px -1px #676B64;
