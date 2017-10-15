@@ -34,7 +34,7 @@ class App extends Component{
         console.log(error);
       });
   }
-  
+
   deleteFeedAction = (feedIndexNumber, feedObjectId) => {
       var self = this;
         axios.post(`http://localhost:4000${self.props.match.url}`,{

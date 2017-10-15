@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import FaTrashO from 'react-icons/lib/fa/trash-o';
 import FaBookmarkO from 'react-icons/lib/fa/bookmark-o';
 import FaCloudUpload from 'react-icons/lib/fa/cloud-upload';
+import FaCheckCircleO from 'react-icons/lib/fa/check-circle-o';
 import './App.css';
 import Modal from './modal/modal';
 import node1 from '../Categories/node1.png';
@@ -12,7 +13,7 @@ class FeedCard extends Component{
   constructor(props){
     super(props);
       this.state = {
-        isModalOpen: false
+        isModalOpen: false,
       }; 
     }
     
@@ -20,23 +21,21 @@ class FeedCard extends Component{
       this.setState({isModalOpen:!(this.state.isModalOpen)});
     }
     
+    
+
     deleteFeedFunctionLocal = () => {
       this.props.deleteFeedAction(this.props.indexNumber, this.props._id);
-      console.log(this);
     }
 
     archiveFeedFunctionLocal = () => {
       this.props.archiveFeedAction(this.props.indexNumber, this.props._id);
-      console.log(this);
     }
 
     publishFeedFunctionLocal = () => {
       this.props.publishFeedAction(this.props.indexNumber, this.props._id);
-      console.log(this);
     }
 
   render(){
-      
     return(
     <div>
           <div className = "feed-card-box" onClick={this.openModal}>
@@ -62,6 +61,8 @@ class FeedCard extends Component{
           
 
               <div className = "actionButtonsDiv">
+                  <FaCheckCircleO className = "selectIcon"/>
+                  <span id = "selectHighlight" className = "hoverText" onClick = { this.selectFeedFunctionLocal }>Select</span><br/>
                   <FaTrashO className = "deleteIcon" onClick = { this.deleteFeedFunctionLocal } />
                   <span id = "deleteHighlight" className = "hoverText">Delete</span><br/>
                   <FaBookmarkO className = "archiveIcon" onClick = { this.archiveFeedFunctionLocal } />

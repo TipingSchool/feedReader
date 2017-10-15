@@ -111,11 +111,11 @@ date{
     /* border: 1px solid black; */
     width: 75px;
     position: relative;
-    top: 38px;
+    top: 25px;
     float: right;
 }
 
-.deleteIcon, .archiveIcon, .publishIcon{
+.selectIcon, .deleteIcon, .archiveIcon, .publishIcon{
     padding : 4px 1px ;
     display: inline-block;
     background-color: #FFF;
@@ -128,6 +128,11 @@ date{
     font-size : 14px;
     color : white;
     font-family: "Roboto", sans-serif;
+}
+
+.hoverText#selectHighlight{
+    visibility: hidden;
+    background-color: #B81ADF;
 }
 
 .hoverText#deleteHighlight{
@@ -144,9 +149,23 @@ date{
 }
 
 
+.selectIcon{
+    border-top-right-radius: 5px;
+    border : 0.5px solid #C9BBBB;
+}
+.selectIcon:hover{
+    background-color: #F7F4F4;
+}
+
+.selectIcon:hover + .hoverText#selectHighlight{
+    visibility: visible;
+}
+
+.selectIcon:active{
+    background-color: #B2BBB5;
+}
 
 .deleteIcon{
-    border-top-right-radius: 5px;
     border: 0.5px solid #C9BBBB;
 }
 .deleteIcon:hover{
@@ -186,7 +205,7 @@ date{
     background-color: #F7F4F4;
 }
 .publishIcon:hover + .hoverText#publishHighlight{
-    visibility: visible;
+    visibility : visible;
     background-color: #259625;
 }
 .publishIcon:active{

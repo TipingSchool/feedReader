@@ -18,7 +18,7 @@ class App extends Component {
           super(props);
           this.state ={
             CardValue :[{'imgsrc':mongo, 'title':'MongoDB','name':'mongodb'},{'imgsrc':node, 'title':'NodeJS','name':'nodejs'},{'imgsrc':react, 'title':'ReactJS','name':'reactjs'},
-            {'imgsrc':webdev, 'title':'JavaScript','name':'javascript'},{'imgsrc':devop, 'title':'DevOps','name':'devops'},{'imgsrc':html, 'title':'HTML/CSS','name':'html5'}]
+            {'imgsrc':webdev, 'title':'JavaScript','name':'javascript'},{'imgsrc':devop, 'title':'DevOps','name':'devops'},{'imgsrc':html, 'title':'HTML/CSS','name':'html5'},{'imgsrc':webdev, 'title':'Product Management','name':'product'},{'imgsrc':webdev, 'title':'Engineering','name':'engineering'},{'imgsrc':webdev, 'title':'Web Design','name':'design'}]
           }
        
         }
