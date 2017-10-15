@@ -116,10 +116,10 @@ date{
 /* User action button CSS */
 
 .actionButtonsDiv{
-    /* border: 1px solid black; */
     width: 75px;
     position: relative;
     top: 25px;
+    right: 254px;
     float: right;
 }
 
