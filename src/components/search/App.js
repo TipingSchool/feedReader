@@ -45,7 +45,7 @@ class App extends Component{
         
          return(
              <form className='nav-span'>
-                <input type='text'
+                <input type='text' className='nav-search'
                  value={this.state.query}
                  onChange={this.UpdateSearch}
                  onKeyPress={this.handleSubmit}
