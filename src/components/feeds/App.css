@@ -119,8 +119,8 @@ date{
     width: 75px;
     position: relative;
     top: 25px;
-    right: 254px;
-    float: right;
+    right: -786px;
+    float: left;
 }
 
 .selectIcon, .deleteIcon, .archiveIcon, .publishIcon{
