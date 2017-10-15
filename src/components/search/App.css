@@ -3,9 +3,19 @@
     display: inline;
 }
 
+.nav-search{
+    width: 100px;
+    display: inline-block;
+    transition: width 0.5s;
+}
+.nav-search:hover{
+    width: 300px;
+}
+
 .search-icon{
     background-color: #2b2929;
     color: white;
     /* font-size: 20px; */
     margin: 5px;
+    cursor: pointer
 }
