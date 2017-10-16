@@ -7,6 +7,7 @@
     width: 100px;
     display: inline-block;
     transition: width 0.5s;
+    border-radius: 10px
 }
 .nav-search:hover{
     width: 300px;
