@@ -7,9 +7,9 @@
     width: 100px;
     display: inline-block;
     transition: width 0.5s;
-    border-radius: 10px
+    border-radius: 10px;
 }
-.nav-search:hover{
+.nav-search:focus{
     width: 300px;
 }
 

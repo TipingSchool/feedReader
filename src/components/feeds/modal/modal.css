@@ -36,8 +36,8 @@
     font-size: 20px;
     text-align: center;
     margin: 0 5px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-    
+    letter-spacing: 0.8px;
+    font-family: 'Basic', sans-serif;    
 }
 .modal-description{
     clear: both;
@@ -45,7 +45,7 @@
     font-size: 14px;
     line-height: 1.5;
     color: #306C6D;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'TitilliumWeb-Regular', sans-serif;
     text-align: justify
 }
 
@@ -53,13 +53,23 @@
     margin: 0 10px;
     color: #7A4609;
     float: left;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-family: 'Nunito-Regular', sans-serif;
     font-size: 14px;
+    padding: 0 0 0 44px;
 }
 .modal-link{
     margin:10px 20px;
     float: right;
+    color : #FFF;
     font-size: 14px;
+    border-radius: 10px;
+    padding : 5px;
+    font-family: 'Basic', sans-serif;
     text-decoration: none;
+    background-color: rgb(0, 160, 93);
+}
+.modal-link:hover{
+    background-color: rgb(32, 129, 240);
 }
 
