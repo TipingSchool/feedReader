@@ -3,6 +3,9 @@ import './App.css';
 import UserActions from "./User_actions";
 import FeedCard from './feedcard';
 import axios from 'axios';
+import config from '../../config';
+
+const UriPlaceholder = config.api_Url;
 
 class App extends Component{
   constructor(props){
@@ -17,7 +20,7 @@ class App extends Component{
     var nextLocation = nextProp.location.pathname  + nextProp.location.search
     if(currentLocation !== nextLocation){
       var self = this;
-      axios.get(`http://localhost:4000${nextLocation}`).then(function(response){
+      axios.get(`${UriPlaceholder}${nextLocation}`).then(function(response){
         self.setState({feeds:response.data});
        }).catch(function (error){
          console.log(error);
@@ -27,17 +30,18 @@ class App extends Component{
 
   componentWillMount(){
      var self = this;
-     axios.get(`http://localhost:4000${ self.props.location.pathname + self.props.location.search}`).then(function(response){
+     axios.get(`${UriPlaceholder}${ self.props.location.pathname + self.props.location.search}`).then(function(response){
        self.setState({feeds:response.data});
       })
       .catch(function (error){
         console.log(error);
       });
+      console.log(self.props.location.pathname + self.props.location.search)
   }
 
   deleteFeedAction = (feedIndexNumber, feedObjectId) => {
       var self = this;
-        axios.post(`http://localhost:4000${self.props.match.url}`,{
+        axios.post(`${UriPlaceholder}${self.props.match.url}`,{
             feedObjectId :  feedObjectId,
             action : "delete"
         }
@@ -54,7 +58,7 @@ class App extends Component{
 
   archiveFeedAction = (feedIndexNumber, feedObjectId) => {
     var self = this;
-    axios.post(`http://localhost:4000${self.props.match.url}`,{
+    axios.post(`${UriPlaceholder}${self.props.match.url}`,{
       feedObjectId : feedObjectId,
       action : "archive"
     }).then(function(response){
@@ -70,7 +74,7 @@ class App extends Component{
 
   publishFeedAction = (feedIndexNumber, feedObjectId) => {
     var self = this;
-    axios.post(`http://localhost:4000${self.props.match.url}`,{
+    axios.post(`${UriPlaceholder}${self.props.match.url}`,{
       feedObjectId : feedObjectId,
       action : "publish"
     }).then(function(response){
